@@ -2,7 +2,20 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        bodyFont: ["Poppins", "sans-serif"],
+        titleFont: ["Montserrat", "sans-serif"],
+        LogoFont: [
+          "IBM Plex Sans",
+          "Work Sans",
+          "sans-serif",
+          "Rancho",
+          "cursive",
+        ],
+        LogoFont1: ["Alegreya Sans", "sans-serif"],
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

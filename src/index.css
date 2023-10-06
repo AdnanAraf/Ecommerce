@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&family=IBM+Plex+Sans:wght@600&family=Inter:wght@500;600&family=Poppins&family=Rancho&family=Work+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&family=Inter:wght@600&family=Rancho&family=Work+Sans:wght@500&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&family=IBM+Plex+Sans:wght@600&family=Inter:wght@600&family=Rancho&family=Work+Sans:wght@500&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
