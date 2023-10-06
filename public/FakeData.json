@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Doll",
+    "price": "20",
+    "rating": "4.5",
+    "image": "https://i.ibb.co/Tq87g19/group-stuffed-bears-are-sitting-front-blue-wall-1340-35249.jpg"
+  },
+  {
+    "title": "Badminton",
+    "price": "40",
+    "rating": "4.8",
+    "image": "https://i.ibb.co/KmG5rFQ/still-life-perfectly-ordered-fitness-gym-accessories-52683-100710.jpg"
+  },
+  {
+    "title": "Football",
+    "price": "30",
+    "rating": "4.5",
+    "image": "https://i.ibb.co/RPZNt06/Screenshot-6.png"
+  }
+]

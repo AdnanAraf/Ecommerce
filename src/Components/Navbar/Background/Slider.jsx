@@ -11,6 +11,7 @@ import "./style.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Gallery from "../Gallery/Gallery";
 
 const Slider = () => {
   const imgSrc = [
@@ -19,39 +20,64 @@ const Slider = () => {
     "https://img.freepik.com/free-photo/warm-blankets-plush-toy_23-2147698733.jpg?w=1060&t=st=1688345980~exp=1688346580~hmac=1cf89df5880d131545ff6ae73e4f291a1f6c4b31d2b56877aa29bb8d920ca1bb",
   ];
   return (
-    <>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Autoplay, Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <img className="mt-[10px] h-[400px] rounded-lg" src={imgSrc[0]}></img>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
+    <div>
+      <div className="flex gap-[20px]">
+        <div>
+          <div>
+            <Swiper
+              spaceBetween={30}
+              centeredSlides={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Autoplay, Pagination]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <img
+                  className="mt-[10px] h-[500px] rounded-lg"
+                  src={imgSrc[0]}
+                ></img>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  className="mt-[10px] h-[500px] rounded-lg "
+                  src={imgSrc[1]}
+                ></img>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  className="mt-[10px] h-[500px] rounded-lg "
+                  src={imgSrc[2]}
+                ></img>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+
+        <div className="mt-[90px] ">
           <img
-            className="mt-[10px] h-[400px] rounded-lg "
-            src={imgSrc[1]}
+            className="h-[250px] rounded-lg  w-[600px]"
+            src="https://i.ibb.co/sJ2BBPg/cute-plush-toys-arrangement-23-2150312316.jpg"
           ></img>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <img
-            className="mt-[10px] h-[400px] rounded-lg "
-            src={imgSrc[2]}
-          ></img>
-        </SwiperSlide>
-      </Swiper>
-    </>
+        </div>
+      </div>
+      <div className=" flex gap-[10px] ml-[870px] mt-[-240px]">
+        <img
+          className="h-[240px] w-[300px] rounded-lg"
+          src="https://i.ibb.co/CJ34Rmy/Screenshot-4.png"
+        ></img>
+        <img
+          className="h-[240px] w-[295px] rounded-lg"
+          src="https://i.ibb.co/DbkKB1G/Screenshot-5.png"
+        ></img>
+      </div>
+      <Gallery />
+    </div>
   );
 };
 
