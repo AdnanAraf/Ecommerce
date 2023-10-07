@@ -1,17 +1,18 @@
 import React from "react";
 import { FaEye } from "react-icons/fa";
+import ExtraSection from "../ExtraSection/ExtraSection";
 
 const GalleryCard = ({ item }) => {
   const { image, title, price, rating } = item;
   return (
     <div>
       <div>
-        <div className="card w-[280px] h-[510px] bg-base-100 shadow-xl mt-[200px]">
+        <div className="card w-[290px] h-[480px] bg-base-100 shadow-xl mt-[200px]">
           <figure className="">
             <img
               src={image}
               alt="Shoes"
-              className="rounded-xl h-[356px] w-[280px]"
+              className="rounded-xl h-[356px] w-[290px]"
             />
           </figure>
           <div className="card-body ">
