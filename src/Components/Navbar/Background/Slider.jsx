@@ -11,7 +11,6 @@ import "./style.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import Gallery from "../Gallery/Gallery";
 
 const Slider = () => {
   const imgSrc = [
@@ -54,7 +53,7 @@ const Slider = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              {/* <SwiperSlide>
+              <SwiperSlide>
                 <img
                   className="mt-[10px] h-[500px] rounded-lg "
                   src={imgSrc[1]}
@@ -65,7 +64,7 @@ const Slider = () => {
                   className="mt-[10px] h-[500px] rounded-lg "
                   src={imgSrc[2]}
                 ></img>
-              </SwiperSlide> */}
+              </SwiperSlide>
             </Swiper>
           </div>
         </div>
@@ -81,7 +80,6 @@ const Slider = () => {
       <div className=" flex gap-[10px] ml-[870px] mt-[-240px]">
         
       </div> */}
-      <Gallery />
     </div>
   );
 };

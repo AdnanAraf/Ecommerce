@@ -45,9 +45,7 @@ const Gallery = () => {
           <Modal />
         </div>
       </div>
-      <div>
-        <ExtraSection />
-      </div>
+      <div></div>
     </div>
   );
 };

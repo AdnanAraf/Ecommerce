@@ -40,15 +40,14 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="mt-[40px]  mr-[80px]">
-          <Link className="p-[20px]" to="/">
-            Login
+          <Link className="p-[20px]" to="/login">
+            <button className="btn btn-success">Login</button>
           </Link>
           <Link className="p-[20px]" to="/">
             LogOut
           </Link>
         </div>
       </div>
-      <Slider />
     </div>
   );
 };
