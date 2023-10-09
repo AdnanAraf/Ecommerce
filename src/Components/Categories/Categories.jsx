@@ -5,7 +5,7 @@ import CategoriesCard from "./CategoriesCard/CategoriesCard";
 const Categories = () => {
   const [categories, setcategories] = useState([]);
   useEffect(() => {
-    fetch("Categories.json")
+    fetch("http://localhost:5000/CategoriesCollection")
       .then((res) => res.json())
       .then((data) => setcategories(data));
   }, []);
@@ -42,7 +42,7 @@ const Categories = () => {
             <TabPanel>
               <div className="grid grid-cols-3 gap-[20px] mt-[100px] ml-[150px] ">
                 {Dolls.map((item) => (
-                  <CategoriesCard item={item} />
+                  <CategoriesCard key={item._id} item={item} />
                 ))}
               </div>
             </TabPanel>
@@ -51,7 +51,7 @@ const Categories = () => {
             <TabPanel>
               <div className="grid grid-cols-3 gap-[20px] mt-[100px] ml-[150px]">
                 {cars.map((item) => (
-                  <CategoriesCard item={item} />
+                  <CategoriesCard key={item._id} item={item} />
                 ))}
               </div>
             </TabPanel>
@@ -60,7 +60,7 @@ const Categories = () => {
             <TabPanel>
               <div className="grid grid-cols-3 gap-[20px] mt-[100px] ml-[150px] ">
                 {Engineering.map((item) => (
-                  <CategoriesCard item={item} />
+                  <CategoriesCard key={item._id} item={item} />
                 ))}
               </div>
             </TabPanel>
@@ -69,7 +69,7 @@ const Categories = () => {
           <TabPanel>
             <div className="grid grid-cols-3 gap-[20px] mt-[100px]  ml-[150px]">
               {musical.map((item) => (
-                <CategoriesCard item={item} />
+                <CategoriesCard key={item._id} item={item} />
               ))}
             </div>
           </TabPanel>
@@ -77,7 +77,7 @@ const Categories = () => {
           <TabPanel>
             <div className="grid grid-cols-3 gap-[30px] mt-[100px] ml-[150px]">
               {sports.map((item) => (
-                <CategoriesCard item={item} />
+                <CategoriesCard key={item._id} item={item} />
               ))}
             </div>
           </TabPanel>

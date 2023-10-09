@@ -43,7 +43,7 @@ const Navbar = () => {
           <Link className="p-[20px] font-bodyFont text-[16px]" to="/">
             All Products
           </Link>
-          <Link className="p-[20px] font-bodyFont text-[16px]" to="/">
+          <Link className="p-[20px] font-bodyFont text-[16px]" to="Addproduct">
             Add Product
           </Link>
           <Link className="p-[20px] font-bodyFont text-[16px]" to="/">

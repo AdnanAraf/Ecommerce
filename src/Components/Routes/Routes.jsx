@@ -5,6 +5,8 @@ import Login from "../Pages/Login";
 import Home from "../Home/Home";
 import Home1 from "../Home/Home1";
 import Signup from "../Pages/Signup";
+import CategoriesDetailsCard from "../Categories/CategoriesDetailsCard/CategoriesDetailsCard";
+import AddProducts from "../Products/AddProducts/AddProducts";
 
 const Routes = createBrowserRouter([
   {
@@ -22,6 +24,16 @@ const Routes = createBrowserRouter([
       {
         path: "register",
         element: <Signup />,
+      },
+      {
+        path: "/details/:_id",
+        element: <CategoriesDetailsCard />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/CategoriesCollection/${params.id}`),
+      },
+      {
+        path: "Addproduct",
+        element: <AddProducts />,
       },
     ],
   },

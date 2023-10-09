@@ -1,0 +1,12 @@
+.facebook:hover {
+  box-shadow: 1px 1px 10px #4267b2, 1px 1px 20px #4267b2;
+}
+.linkedin:hover {
+  box-shadow: 1px 1px 10px #0072b1, 1px 1px 20px #0072b1;
+}
+.twitter:hover {
+  box-shadow: 1px 1px 10px #1da1f2, 1px 1px 20px #1da1f2;
+}
+.youtube:hover {
+  box-shadow: 1px 1px 10px red, 1px 1px 20px red;
+}

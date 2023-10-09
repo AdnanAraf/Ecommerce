@@ -8,6 +8,7 @@ import {
   FaRegStar,
   FaStar,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const CategoriesCard = ({ item }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -18,7 +19,7 @@ const CategoriesCard = ({ item }) => {
     setIsHovered(true);
   };
 
-  const { title, img, price, rating } = item;
+  const { _id, title, img, price, rating } = item;
   return (
     <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className="relative h-[400px] w-[300px] bg-white-400 shadow-2xl   mx-auto rounded-lg transition duration-200 transform hover:translate-y-2 fadeIn">
@@ -34,7 +35,9 @@ const CategoriesCard = ({ item }) => {
           </div>
           {isHovered && (
             <div className="absolute right-0 bg-gray-200 h-[80px] w-[50px] bottom-[100px]">
-              <FaEye className="mt-[20px] ml-[20px]" />
+              <Link to={`/details/${_id}`}>
+                <FaEye className="mt-[20px] ml-[20px]" />
+              </Link>
               <FaHeart className="mt-[20px] ml-[20px]" />
             </div>
           )}
