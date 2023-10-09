@@ -7,6 +7,7 @@ import Home1 from "../Home/Home1";
 import Signup from "../Pages/Signup";
 import CategoriesDetailsCard from "../Categories/CategoriesDetailsCard/CategoriesDetailsCard";
 import AddProducts from "../Products/AddProducts/AddProducts";
+import AllProducts from "../Products/AllProducts/AllProducts";
 
 const Routes = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const Routes = createBrowserRouter([
       {
         path: "Addproduct",
         element: <AddProducts />,
+      },
+      {
+        path: "Allproduct",
+        element: <AllProducts />,
       },
     ],
   },
