@@ -8,6 +8,8 @@ import Signup from "../Pages/Signup";
 import CategoriesDetailsCard from "../Categories/CategoriesDetailsCard/CategoriesDetailsCard";
 import AddProducts from "../Products/AddProducts/AddProducts";
 import AllProducts from "../Products/AllProducts/AllProducts";
+import MyProducts from "../Products/MyProducts";
+import UpdateProduct from "../Products/UpdateProduct/UpdateProduct";
 
 const Routes = createBrowserRouter([
   {
@@ -39,6 +41,16 @@ const Routes = createBrowserRouter([
       {
         path: "Allproduct",
         element: <AllProducts />,
+      },
+      {
+        path: "mytoys",
+        element: <MyProducts />,
+      },
+      {
+        path: "update/:id",
+        element: <UpdateProduct />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/ToysData/${params.id}`),
       },
     ],
   },
