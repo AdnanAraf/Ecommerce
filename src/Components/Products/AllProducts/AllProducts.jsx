@@ -2,14 +2,23 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import Allproductcard from "../Allproductcard/Allproductcard";
+import Modal from "../Modal/Modal";
 
 const AllProducts = () => {
   const [allproduct, setallproduct] = useState([]);
+
+  const [singleData, setSingleData] = useState({});
+
   useEffect(() => {
     fetch("http://localhost:5000/ToysData")
       .then((res) => res.json())
       .then((data) => setallproduct(data));
   }, []);
+  const showModal = (id) => {
+    fetch(`http://localhost:5000/ToysData/${id}`)
+      .then((res) => res.json())
+      .then((data) => setSingleData(data));
+  };
   return (
     <div>
       <div className="overflow-x-auto w-full mt-[150px]">
@@ -46,10 +55,18 @@ const AllProducts = () => {
           </thead>
           <tbody>
             {allproduct.map((item, index) => (
-              <Allproductcard key={item._id} item={item} index={index} />
+              <Allproductcard
+                key={item._id}
+                item={item}
+                index={index}
+                showModal={showModal}
+              />
             ))}
           </tbody>
         </table>
+        <div>
+          <Modal singledata={singleData} />
+        </div>
       </div>
     </div>
   );

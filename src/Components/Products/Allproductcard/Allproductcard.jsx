@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const Allproductcard = ({ item, index }) => {
+const Allproductcard = ({ item, index, showModal }) => {
   const { _id, Toyname, SellerName, category, quantity, email, price, photo } =
     item;
+
   return (
     <tr>
       <td>
@@ -18,9 +18,17 @@ const Allproductcard = ({ item, index }) => {
       <td className="font-titleFont pl-[30px]">${price}</td>
       <td className="font-titleFont pl-[100px]">{quantity}</td>
       <td>
-        <Link to={`/singletoys/${_id}`}>
-          <button className="btn btn-info">View Details</button>
-        </Link>
+        <label
+          className="cursor-pointer"
+          onClick={() => document.getElementById("my_modal_3").showModal()}
+        >
+          <button
+            onClick={() => showModal(_id)}
+            className="btn btn-info font-titleFont"
+          >
+            Details
+          </button>
+        </label>
       </td>
     </tr>
   );
