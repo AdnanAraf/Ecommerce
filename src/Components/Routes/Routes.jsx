@@ -10,6 +10,7 @@ import AddProducts from "../Products/AddProducts/AddProducts";
 import AllProducts from "../Products/AllProducts/AllProducts";
 import MyProducts from "../Products/MyProducts";
 import UpdateProduct from "../Products/UpdateProduct/UpdateProduct";
+import Shop from "../Products/Shop/Shop";
 
 const Routes = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const Routes = createBrowserRouter([
         element: <UpdateProduct />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/ToysData/${params.id}`),
+      },
+      {
+        path: "Shop",
+        element: <Shop />,
       },
     ],
   },

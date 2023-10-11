@@ -60,18 +60,33 @@ const Slider = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              {/* <SwiperSlide>
+              <SwiperSlide>
                 <img
                   className="mt-[10px] h-[500px] rounded-lg "
                   src={imgSrc[1]}
                 ></img>
               </SwiperSlide>
               <SwiperSlide>
-                <img
-                  className="mt-[10px] h-[500px] rounded-lg "
-                  src={imgSrc[2]}
-                ></img>
-              </SwiperSlide> */}
+                <div>
+                  <div className="relative">
+                    <img
+                      className="mt-[10px] h-[500px] rounded-lg "
+                      src={imgSrc[2]}
+                    ></img>
+                  </div>
+                  <div className="absolute top-0 right-[50px]">
+                    <h1 className=" font-titleFont  border-2 border-white mt-[50px] w-[354px] h-[44px] rounded-lg pt-[5px]">
+                      Super Hit and Cloth Collection
+                    </h1>
+                    <h1 className="text-[35px] font-titleFont pt-[50px] font-semibold ">
+                      Cloth and toys
+                    </h1>
+                    <button className="font-titleFont text-[17px] bg-orange-400 h-[44px] w-[164px] rounded-lg mt-[10px]">
+                      Explore Now
+                    </button>
+                  </div>
+                </div>
+              </SwiperSlide>
             </Swiper>
           </div>
         </div>

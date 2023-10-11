@@ -3,137 +3,160 @@
     "title": "Dolls",
     "img": "https://i.ibb.co/vxWGGRK/cute-fluffy-monkey-toys.jpg",
     "price": "15",
-    "rating": "4.6"
+    "rating": "4.6",
+    "category": "allproduct"
   },
   {
     "title": "Dolls",
     "img": "https://i.ibb.co/hcgBKzk/Screenshot-11.png",
     "price": "10",
-    "rating": "4.6"
+    "rating": "4.6",
+    "category": "allproduct"
   },
   {
     "title": "Dolls",
     "img": "https://i.ibb.co/k4Gb4MS/group-stuffed-bears-are-sitting-front-blue-wall-1340-35248.jpg",
     "price": "15",
-    "rating": "4.6"
+    "rating": "4.6",
+    "category": "allproduct"
   },
   {
     "title": "Dolls",
     "img": "https://i.ibb.co/k9QyQC7/Screenshot-12.png",
     "price": "15",
-    "rating": "4.6"
+    "rating": "4.6",
+    "category": "allproduct"
   },
   {
     "title": "Dolls",
     "img": "https://i.ibb.co/KKfcjHC/Screenshot-13.png",
     "price": "15",
-    "rating": "4.6"
+    "rating": "4.6",
+    "category": "allproduct"
   },
   {
     "title": "Dolls",
     "img": "https://i.ibb.co/ZMj8dHQ/blue-background-with-stuffed-animals-white-ball-with-bear-it-1340-36017.jpg",
     "price": "15",
-    "rating": "4.6"
+    "rating": "4.6",
+    "category": "allproduct"
   },
   {
     "title": "cars",
     "img": "https://i.ibb.co/Xksb0K7/vintage-miniature-car-fake-landscape-155003-1097.jpg",
     "price": "16",
-    "rating": "4.2"
+    "rating": "4.2",
+    "category": "allproduct"
   },
   {
     "title": "cars",
     "img": "https://i.ibb.co/bPLLPLW/close-up-toy-car-with-easter-eggs-23-2149318371.jpg",
     "price": "16",
-    "rating": "4.2"
+    "rating": "4.2",
+    "category": "allproduct"
   },
   {
     "title": "cars",
     "img": "https://i.ibb.co/yFQsFsk/yellow-toy-truck-yard-181624-28412.jpg",
     "price": "18",
-    "rating": "4.2"
+    "rating": "4.2",
+    "category": "allproduct"
   },
   {
     "title": "cars",
     "img": "https://i.ibb.co/2PfwB4k/Screenshot-14.png",
     "price": "14",
-    "rating": "4.2"
+    "rating": "4.2",
+    "category": "allproduct"
   },
   {
     "title": "cars",
     "img": "https://i.ibb.co/DWN9mVw/image-yellow-toy-school-bus-profile-white-background-125540-3468.jpg",
     "price": "13",
-    "rating": "4.2"
+    "rating": "4.2",
+    "category": "allproduct"
   },
   {
     "title": "cars",
     "img": "https://i.ibb.co/6t617Bd/Screenshot-15.png",
     "price": "18",
-    "rating": "4.2"
+    "rating": "4.2",
+    "category": "allproduct"
   },
   {
     "title": "Engineering",
     "img": "https://i.ibb.co/cbDQmzV/3d-illustration-mining-drill-mining-machine-orange-background-951562-1121.jpg",
     "price": "25",
-    "rating": "5"
+    "rating": "5",
+    "category": "allproduct"
   },
   {
     "title": "Engineering",
     "img": "https://i.ibb.co/rdx1rmm/robot-style-car-with-joystick-140725-9003.jpg",
     "price": "25",
-    "rating": "5"
+    "rating": "5",
+    "category": "allproduct"
   },
   {
     "title": "Engineering",
     "img": "https://i.ibb.co/6FZbbKY/detailed-illustration-mathematical-place-value-abacus-1308-2489.jpg",
-    "rating": "5"
+    "rating": "5",
+    "category": "allproduct"
   },
   {
     "title": "Engineering",
     "img": "https://i.ibb.co/nQmzpr4/Screenshot-16.png",
     "price": "25",
-    "rating": "5"
+    "rating": "5",
+    "category": "allproduct"
   },
   {
     "title": "musical",
     "img": "https://i.ibb.co/cFJfqLk/flat-lay-colorful-xylophone-baby-shower-23-2148430463.jpg",
     "price": "17",
-    "rating": "5"
+    "rating": "5",
+    "category": "allproduct"
   },
   {
     "title": "musical",
     "img": "https://i.ibb.co/Bz0PHyn/Screenshot-17.png",
     "price": "26",
-    "rating": "5"
+    "rating": "5",
+    "category": "allproduct"
   },
   {
     "title": "musical",
     "img": "https://i.ibb.co/3NmF36z/Screenshot-18.png",
     "price": "20",
-    "rating": "5"
+    "rating": "5",
+    "category": "allproduct"
   },
   {
     "title": "sports",
     "img": "https://i.ibb.co/YdCkxqr/cardboard-box-full-sport-equipments-white-1308-39926.jpg",
     "price": "30",
-    "rating": "4.9"
+    "rating": "4.9",
+    "category": "allproduct"
   },
   {
     "title": "sports",
     "img": "https://i.ibb.co/0JSP7mF/Screenshot-19.png",
     "price": "30",
-    "rating": "4.9"
+    "rating": "4.9",
+    "category": "allproduct"
   },
   {
     "title": "sports",
     "img": "https://i.ibb.co/KmG5rFQ/still-life-perfectly-ordered-fitness-gym-accessories-52683-100710.jpg",
     "price": "30",
-    "rating": "4.9"
+    "rating": "4.9",
+    "category": "allproduct"
   },
   {
     "title": "sports",
     "img": "https://i.ibb.co/pX6FcHp/top-view-ping-pong-paddle-with-new-balls-23-2148796918.jpg",
     "price": "30",
-    "rating": "4.9"
+    "rating": "4.9",
+    "category": "allproduct"
   }
 ]
