@@ -53,7 +53,7 @@ const ExtraSection = () => {
         <div>
           <img
             className="h-[240px] w-[500px] rounded-lg"
-            src="https://i.ibb.co/CJ34Rmy/Screenshot-4.png"
+            src="https://i.ibb.co/sgqmhTg/top-view-ping-pong-paddles-with-boxing-gloves-sport-essentials-23-2148523213.jpg"
           ></img>
         </div>
         <div className="">

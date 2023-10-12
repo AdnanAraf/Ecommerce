@@ -1,16 +1,59 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { FaEye, FaHeart, FaRegEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import useCart from "../../../hooks/useCart";
+import Swal from "sweetalert2";
+import useWish from "../../../hooks/useWish";
+import { ToastContainer, toast } from "react-toastify";
 
 const ShopCard = ({ item, showModal }) => {
   const { _id, img, title, price, rating } = item;
   const [isHovered, setIsHovered] = useState(false);
+  const { user } = useContext(AuthContext);
+  const [, refetch] = useWish();
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
   const handleMouseEnter = () => {
     setIsHovered(true);
+  };
+
+  const wishList = (product) => {
+    if (user && user.email) {
+      const productitem = {
+        MenuItemId: _id,
+        img,
+        title,
+        price,
+        email: user?.email,
+      };
+      fetch("http://localhost:5000/WishCart", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+
+        body: JSON.stringify(productitem),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.insertedId) {
+            refetch();
+            toast("🦄 Wish is added..!", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+            });
+          }
+        });
+    }
   };
 
   return (
@@ -39,7 +82,11 @@ const ShopCard = ({ item, showModal }) => {
                 />
               </label>
 
-              <FaHeart className="mt-[20px] ml-[20px]" />
+              <FaHeart
+                onClick={() => wishList(item)}
+                className="mt-[20px] ml-[20px] cursor-pointer"
+              />
+              <ToastContainer></ToastContainer>
             </div>
           )}
         </div>

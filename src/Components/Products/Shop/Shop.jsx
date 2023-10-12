@@ -5,12 +5,15 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "./Shop.css";
 import ShopCard from "./ShopCard/ShopCard";
 import ShopModal from "./ShopModal/ShopModal";
+import { FaGripHorizontal, FaGripVertical } from "react-icons/fa";
+import Horizontal from "./Horizontal/Horizontal";
 
 const Shop = () => {
   const [product, setproduct] = useState([]);
   const [asc, setAsc] = useState(true);
   const [searchText, setSearchText] = useState("");
   const [showproduct, setshowproduct] = useState({});
+  const [fourColumn, setgrid] = useState(true);
   useEffect(() => {
     fetch(`http://localhost:5000/AllProduct?sort=${asc ? "asc" : "desc"}`)
       .then((res) => res.json())
@@ -32,11 +35,18 @@ const Shop = () => {
       });
   };
   const showModal = (id) => {
-    console.log(id);
     fetch(`http://localhost:5000/AllProduct/${id}`)
       .then((res) => res.json())
       .then((data) => setshowproduct(data));
   };
+
+  const horizontal = () => {
+    setgrid(true);
+  };
+  const Vertical = () => {
+    setgrid(false);
+  };
+
   const dolls = product.filter((item) => item.title === "Dolls");
   const sports = product.filter((item) => item.title === "sports");
   const musical = product.filter((item) => item.title === "musical");
@@ -65,12 +75,26 @@ const Shop = () => {
             className=" select  bg-gray-100 font-titleFont text-[16px]"
             onChange={handleSortChange}
           >
+            <option value="asc">Price: Low to High</option>
+
             <option className="h-[60px] w-[160px]" value="desc ">
               Price: High To Low
             </option>
-
-            <option value="asc">Price: Low to High</option>
           </select>
+        </div>
+        <div className="flex gap-[30px] absolute ml-[480px] mt-[70px]">
+          <div>
+            <FaGripHorizontal
+              onClick={horizontal}
+              className="h-[25px] w-[25px]"
+            ></FaGripHorizontal>
+          </div>
+          <div>
+            <FaGripVertical
+              onClick={Vertical}
+              className="h-[25px] w-[25px]"
+            ></FaGripVertical>
+          </div>
         </div>
 
         <div class>
@@ -136,57 +160,163 @@ const Shop = () => {
                 Search
               </button>
             </div>
+            <div>
+              {fourColumn ? (
+                <div>
+                  <TabPanel className="grid grid-cols-4 mt-[100px] gap-[40px]">
+                    {allproduct.map((item) => (
+                      <ShopCard
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                    {/* {sofa.map((item1) => (
+              <CategoriesCard key ={item1._id}></CategoriesCard>
+            ))} */}
+                  </TabPanel>
+                  <TabPanel className="grid grid-cols-4  gap-[40px]">
+                    {dolls.map((item) => (
+                      <ShopCard
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                    {/* {sofa.map((item1) => (
+              <CategoriesCard key ={item1._id}></CategoriesCard>
+            ))} */}
+                  </TabPanel>
+                  <TabPanel className="grid grid-cols-4 gap-[40px]">
+                    {cars.map((item) => (
+                      <ShopCard
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                    {/* {sofa.map((item1) => (
+              <CategoriesCard key ={item1._id}></CategoriesCard>
+            ))} */}
+                  </TabPanel>
+                  <TabPanel className="grid grid-cols-4  gap-[40px]">
+                    {engineering.map((item) => (
+                      <ShopCard
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                    {/* {sofa.map((item1) => (
+              <CategoriesCard key ={item1._id}></CategoriesCard>
+            ))} */}
+                  </TabPanel>
 
-            <TabPanel className="grid grid-cols-4 mt-[100px] gap-[40px]">
-              {allproduct.map((item) => (
-                <ShopCard key={item._id} item={item} showModal={showModal} />
-              ))}
-              {/* {sofa.map((item1) => (
+                  <TabPanel className="grid grid-cols-4  gap-[40px]">
+                    {musical.map((item) => (
+                      <ShopCard
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                    {/* {sofa.map((item1) => (
               <CategoriesCard key ={item1._id}></CategoriesCard>
             ))} */}
-            </TabPanel>
-            <TabPanel className="grid grid-cols-4  gap-[40px]">
-              {dolls.map((item) => (
-                <ShopCard key={item._id} item={item} showModal={showModal} />
-              ))}
-              {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
-            </TabPanel>
-            <TabPanel className="grid grid-cols-4 gap-[40px]">
-              {cars.map((item) => (
-                <ShopCard key={item._id} item={item} showModal={showModal} />
-              ))}
-              {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
-            </TabPanel>
-            <TabPanel className="grid grid-cols-4  gap-[40px]">
-              {engineering.map((item) => (
-                <ShopCard key={item._id} item={item} showModal={showModal} />
-              ))}
-              {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
-            </TabPanel>
+                  </TabPanel>
 
-            <TabPanel className="grid grid-cols-4  gap-[40px]">
-              {musical.map((item) => (
-                <ShopCard key={item._id} item={item} showModal={showModal} />
-              ))}
-              {/* {sofa.map((item1) => (
+                  <TabPanel className="grid grid-cols-4  gap-[40px]">
+                    {sports.map((item) => (
+                      <ShopCard
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                    {/* {sofa.map((item1) => (
               <CategoriesCard key ={item1._id}></CategoriesCard>
             ))} */}
-            </TabPanel>
+                  </TabPanel>
+                </div>
+              ) : (
+                <div>
+                  <TabPanel className="grid grid-cols-1 gap-[20px]  mt-[100px] ">
+                    {allproduct.map((item) => (
+                      <Horizontal
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                    {/* {sofa.map((item1) => (
+              <CategoriesCard key ={item1._id}></CategoriesCard>
+            ))} */}
+                  </TabPanel>
+                  <TabPanel className="grid grid-cols-1  gap-[40px]">
+                    {dolls.map((item) => (
+                      <Horizontal
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                    {/* {sofa.map((item1) => (
+              <CategoriesCard key ={item1._id}></CategoriesCard>
+            ))} */}
+                  </TabPanel>
+                  <TabPanel className="grid grid-cols-1 gap-[40px]">
+                    {cars.map((item) => (
+                      <Horizontal
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                    {/* {sofa.map((item1) => (
+              <CategoriesCard key ={item1._id}></CategoriesCard>
+            ))} */}
+                  </TabPanel>
+                  <TabPanel className="grid grid-cols-1  gap-[40px]">
+                    {engineering.map((item) => (
+                      <Horizontal
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                    {/* {sofa.map((item1) => (
+              <CategoriesCard key ={item1._id}></CategoriesCard>
+            ))} */}
+                  </TabPanel>
 
-            <TabPanel className="grid grid-cols-4  gap-[40px]">
-              {sports.map((item) => (
-                <ShopCard key={item._id} item={item} showModal={showModal} />
-              ))}
-              {/* {sofa.map((item1) => (
+                  <TabPanel className="grid grid-cols-1  gap-[40px]">
+                    {musical.map((item) => (
+                      <Horizontal
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                    {/* {sofa.map((item1) => (
               <CategoriesCard key ={item1._id}></CategoriesCard>
             ))} */}
-            </TabPanel>
+                  </TabPanel>
+
+                  <TabPanel className="grid grid-cols-1  gap-[40px]">
+                    {sports.map((item) => (
+                      <Horizontal
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                    {/* {sofa.map((item1) => (
+              <CategoriesCard key ={item1._id}></CategoriesCard>
+            ))} */}
+                  </TabPanel>
+                </div>
+              )}
+            </div>
           </Tabs>
         </div>
         <ShopModal showproduct={showproduct} />

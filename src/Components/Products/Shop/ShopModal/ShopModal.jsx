@@ -6,9 +6,11 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
+import useCart from "../../../hooks/useCart";
 
 const ShopModal = ({ showproduct }) => {
   const [count, setcount] = useState(1);
+  const [, refetch1] = useCart();
 
   const { user } = useContext(AuthContext);
   const increment = () => {
@@ -41,6 +43,7 @@ const ShopModal = ({ showproduct }) => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
+            refetch1();
             Swal.fire({
               position: "top-end",
               icon: "success",
