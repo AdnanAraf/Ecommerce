@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useState } from "react";
-import { FaEye, FaHeart, FaRegEye } from "react-icons/fa";
+import { FaEye, FaHeart, FaRegEye, FaRegStar, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import useCart from "../../../hooks/useCart";
@@ -9,9 +9,10 @@ import useWish from "../../../hooks/useWish";
 import { ToastContainer, toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import Rating from "react-rating";
 
 const Horizontal = ({ item }) => {
-  const { _id, img, title, price, rating } = item;
+  const { _id, img, title, price, rating, name, description } = item;
   const [isHovered, setIsHovered] = useState(false);
 
   const [, refetch] = useWish();
@@ -36,7 +37,7 @@ const Horizontal = ({ item }) => {
         email: user.email,
       };
 
-      fetch("http://localhost:5000/carts", {
+      fetch("https://toys-server-adnanaraf.vercel.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -76,7 +77,7 @@ const Horizontal = ({ item }) => {
         price,
         email: user?.email,
       };
-      fetch("http://localhost:5000/WishCart", {
+      fetch("https://toys-server-adnanaraf.vercel.app/WishCart", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -109,24 +110,30 @@ const Horizontal = ({ item }) => {
       onMouseLeave={handleMouseLeave}
       className="flex"
     >
-      <div className="relative h-[400px] w-[600px] bg-white-400 shadow-2xl  ml-[100px]  transition duration-200 transform hover:translate-y-2 fadeIn">
-        <img className="h-full w-full " src={img}></img>
-        <div className="flex justify-between">
+      <div className="relative h-[400px] w-[300px] bg-white shadow-2xl  ml-[50px]  transition duration-200 transform hover:translate-y-2 fadeIn">
+        <img className="h-[200px] w-[250px] m-auto " src={img}></img>
+        <h1 className="text-[18px] font-titleFont ml-[20px] mt-[10px]">
+          {name.substring(0, 50)}
+        </h1>
+
+        <h1 className="text-[18px] font-titleFont ml-[20px] mt-[10px]">
+          ${price}
+        </h1>
+        <h1 className="text-[18px] font-titleFont ml-[20px] ">
+          {rating}
+          <Rating
+            className="text-orange-600  ml-[15px] text-[20px]"
+            placeholderRating={rating}
+            emptySymbol={<FaRegStar />}
+            readonly
+            placeholderSymbol={<FaStar />}
+            fullSymbol={<FaStar />}
+          />
+        </h1>
+        <div className="flex">
           <div></div>
           {isHovered && (
             <div className="absolute right-0 bg-gray-200 h-[80px] w-[50px] bottom-[100px]">
-              {/* <label
-                className="cursor-pointer"
-                onClick={() =>
-                  document.getElementById("my_modal_3").showModal()
-                }
-              >
-                <FaRegEye
-                  className="ml-[20px] mt-[20px]"
-                  onClick={() => showModal(_id)}
-                />
-              </label> */}
-
               <FaHeart
                 onClick={() => wishList1(item)}
                 className="mt-[30px] ml-[20px] cursor-pointer"
@@ -136,44 +143,44 @@ const Horizontal = ({ item }) => {
           )}
         </div>
       </div>
-      <div className="mt-[50px] ml-[50px]">
-        <h1 className="text-[18px] font-titleFont ml-[20px] mt-[10px]">
-          Name:{title}
-        </h1>
-        <h1 className="text-[18px] font-titleFont ml-[20px] mt-[10px]">
-          Price:${price}
-        </h1>
-        <h1 className="text-[18px] font-titleFont ml-[20px] mt-[10px]">
-          Rating:{rating}
-        </h1>
-      </div>
       <div>
-        <div className="ml-[-110px] mt-[180px]">
-          <FontAwesomeIcon
-            onClick={decrement}
-            className="mr-[10px]"
-            icon={faMinus}
-          />
-          <input
-            className="border-2 border-gray-700 w-[100px] text-black pl-[40px]"
-            type="text"
-            placeholder="1"
-            value={count}
-          ></input>
-          <FontAwesomeIcon
-            onClick={increment}
-            className="ml-[10px]"
-            icon={faPlus}
-          />
+        <div>
+          <h1 className="w-[600px] ml-[20px] font-titleFont">
+            {description.substring(0, 1000)}
+          </h1>
         </div>
-        <div className="mt-[30px] text-center ml-[-100px]">
-          <button
-            onClick={() => Handlecart(item)}
-            className="h-[40px] w-[140px] bg-black text-white font-titleFont"
-          >
-            Save Cart
-            <ToastContainer />
-          </button>
+        <div className="flex ml-[20px]">
+          <div className="">
+            <div className="mt-[50px]  ">
+              <div className="flex ">
+                <FontAwesomeIcon
+                  onClick={decrement}
+                  className="mr-[10px]"
+                  icon={faMinus}
+                />
+                <input
+                  className="border-2 border-gray-700 w-[100px] text-black pl-[40px]"
+                  type="text"
+                  placeholder="1"
+                  value={count}
+                ></input>
+                <FontAwesomeIcon
+                  onClick={increment}
+                  className="ml-[10px]"
+                  icon={faPlus}
+                />
+              </div>
+              <div className=" text-center mt-[-30px]  ml-[170px]">
+                <button
+                  onClick={() => Handlecart(item)}
+                  className="h-[40px] w-[140px] bg-black text-white font-titleFont"
+                >
+                  Save Cart
+                  <ToastContainer />
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

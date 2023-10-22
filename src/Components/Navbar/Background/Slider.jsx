@@ -1,107 +1,45 @@
 import React from "react";
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "./style.css";
-
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
+import { Link } from "react-router-dom";
 
 const Slider = () => {
-  const imgSrc = [
-    "https://i.ibb.co/4FvHWdM/little-basketball-player-sportswear-holding-ball-studio-isolated-dark-textured-background-613910-182.jpg",
-    "https://img.freepik.com/free-photo/home-made-robot-desk_23-2148863420.jpg?size=626&ext=jpg&ga=GA1.1.302035678.1683993491&semt=ais",
-    "https://img.freepik.com/free-photo/warm-blankets-plush-toy_23-2147698733.jpg?w=1060&t=st=1688345980~exp=1688346580~hmac=1cf89df5880d131545ff6ae73e4f291a1f6c4b31d2b56877aa29bb8d920ca1bb",
-  ];
   return (
     <div>
       <div>
         <div>
           <div>
-            <Swiper
-              spaceBetween={30}
-              centeredSlides={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Autoplay, Pagination]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <div className="bg-gray-900 flex justify-between ">
-                  <div>
-                    <h1 className=" text-justify text-[45px] font-titleFont pt-[120px] pl-[80px] w-[650px] font-semibold text-gray-300">
-                      Best Collection <br></br>For Children Toys
-                    </h1>
-                    <p className="w-[500px] pl-[80px] pt-[20px] text-justify text-white text-[16px] font-titleFont">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Ab esse obcaecati aut assumenda repudiandae voluptatum
-                      tempore eveniet quaerat eaque hic libero sapiente.
-                    </p>
-                    <button className="h-[50px] mr-[300px] w-[180px] mt-[30px] text-white font-titleFont bg-orange-500 rounded-lg">
+            <div>
+              <div className="relative">
+                <img
+                  className="w-full"
+                  src="https://i.ibb.co/42WHfTb/banner-14716c36.jpg"
+                ></img>
+
+                <div className="absolute top-0">
+                  <h1 className=" text-justify absolute top-[100px] pl-[300px] w-[1200px] text-[55px] font-titleFont  font-semibold text-gray-800">
+                    Best Collection For <br></br>Home Decoration
+                  </h1>
+                  <p className="w-[1200px] pl-[300px] pt-[270px] text-justify text-gray-800 text-[16px] font-titleFont font-medium">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab
+                    esse obcaecati aut assumenda repudiandae voluptatum tempore
+                    eveniet quaerat eaque hic libero sapiente. Lorem ipsum dolor
+                    sit amet consectetur, adipisicing elit. Ab esse obcaecati
+                    aut assumenda repudiandae voluptatum tempore eveniet quaerat
+                    eaque hic libero sapiente.
+                  </p>
+                  <Link to="Shop">
+                    <button className="h-[50px] ml-[300px] w-[180px] mt-[30px] text-white font-titleFont bg-orange-500 rounded-lg">
                       Shop Now
                     </button>
-                  </div>
-
-                  <div>
-                    <img
-                      className="mt-[10px] h-[300px] w-[300px] rounded-lg"
-                      src={imgSrc[0]}
-                    ></img>
-                  </div>
+                  </Link>
                 </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className="mt-[10px] h-[500px] rounded-lg "
-                  src={imgSrc[1]}
-                ></img>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <div className="relative">
-                    <img
-                      className="mt-[10px] h-[500px] rounded-lg "
-                      src={imgSrc[2]}
-                    ></img>
-                  </div>
-                  <div className="absolute top-0 right-[50px]">
-                    <h1 className=" font-titleFont  border-2 border-white mt-[50px] w-[354px] h-[44px] rounded-lg pt-[5px]">
-                      Super Hit and Cloth Collection
-                    </h1>
-                    <h1 className="text-[35px] font-titleFont pt-[50px] font-semibold ">
-                      Cloth and toys
-                    </h1>
-                    <button className="font-titleFont text-[17px] bg-orange-400 h-[44px] w-[164px] rounded-lg mt-[10px]">
-                      Explore Now
-                    </button>
-                  </div>
-                </div>
-              </SwiperSlide>
-            </Swiper>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* <div className="mt-[90px] ">
-          <img
-            className="h-[250px] rounded-lg  w-[600px]"
-            src="https://i.ibb.co/sJ2BBPg/cute-plush-toys-arrangement-23-2150312316.jpg"
-          ></img>
-        </div>
-      </div>
-      <div className=" flex gap-[10px] ml-[870px] mt-[-240px]">
-        
-      </div> */}
     </div>
   );
 };

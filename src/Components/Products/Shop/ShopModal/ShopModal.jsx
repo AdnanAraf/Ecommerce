@@ -10,7 +10,7 @@ import useCart from "../../../hooks/useCart";
 
 const ShopModal = ({ showproduct }) => {
   const [count, setcount] = useState(1);
-  const [, refetch1] = useCart();
+  const [, refetch] = useCart();
 
   const { user } = useContext(AuthContext);
   const increment = () => {
@@ -32,7 +32,7 @@ const ShopModal = ({ showproduct }) => {
         email: user.email,
       };
 
-      fetch("http://localhost:5000/carts", {
+      fetch("https://toys-server-adnanaraf.vercel.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -43,11 +43,11 @@ const ShopModal = ({ showproduct }) => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            refetch1();
+            refetch();
             Swal.fire({
               position: "top-end",
               icon: "success",
-              title: "Toys added on the cart.",
+              title: "Producted added on the cart.",
               showConfirmButton: false,
               timer: 1500,
             });
@@ -72,16 +72,23 @@ const ShopModal = ({ showproduct }) => {
             <div>
               <div>
                 <img
-                  className="h-[300px] w-full mt-[40px]"
+                  className="h-[200px] w-[200px] m-auto"
                   src={showproduct.img}
                 ></img>
               </div>
               <div className="mt-[20px] ml-[30px]">
-                <h1 className="text-[25px] font-titleFont font-semibold">
-                  Name:{showproduct.title}
+                <h1 className="text-[20px] font-titleFont font-semibold">
+                  {showproduct.name}
                 </h1>
-                <p className="text-[16px] font-titleFont">
-                  Price:${showproduct.price}
+                <h1 className="text-[20px] font-titleFont font-semibold">
+                  <span className="text-[16px] font-titleFont font-normal">
+                    {showproduct.description}
+                  </span>
+                </h1>
+                <p className="text-[16px] font-titleFont mt-[20px] font-semibold">
+                  <span className="text-[18px] font-titleFont mt-[20px] font-semibold">
+                    ${showproduct.price}
+                  </span>
                 </p>
               </div>
               <div className="ml-[160px] mt-[10px]">
@@ -102,7 +109,7 @@ const ShopModal = ({ showproduct }) => {
                   icon={faPlus}
                 />
               </div>
-              <div className="mt-[30px] text-center">
+              <div className="mt-[30px] text-center ">
                 <button
                   onClick={() => Handlecart(showproduct)}
                   className="h-[40px] w-[140px] bg-black text-white font-titleFont"

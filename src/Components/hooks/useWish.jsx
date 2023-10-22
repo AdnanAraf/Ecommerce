@@ -10,7 +10,7 @@ const useWish = () => {
     queryKey: ["WishCart", user?.email],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/WishCart?email=${user?.email}`
+        `https://toys-server-adnanaraf.vercel.app/WishCart?email=${user?.email}`
       );
       return res.json();
     },

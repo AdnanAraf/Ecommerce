@@ -5,16 +5,16 @@ import { AuthContext } from "../Provider/AuthProvider";
 const useCart = () => {
   const { user } = useContext(AuthContext);
 
-  const { refetch1, data: cart = [] } = useQuery({
+  const { refetch, data: cart = [] } = useQuery({
     queryKey: ["carts", user?.email],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/carts?email=${user?.email}`
+        `https://toys-server-adnanaraf.vercel.app/carts?email=${user?.email}`
       );
       return res.json();
     },
   });
 
-  return [cart, refetch1];
+  return [cart, refetch];
 };
 export default useCart;

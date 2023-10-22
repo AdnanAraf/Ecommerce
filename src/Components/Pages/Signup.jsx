@@ -92,11 +92,11 @@ const Signup = () => {
               />
             </div>
             {/******************************** PHOTO URL************************************** */}
-            <div className="mx-[50px] m-[20px]">
+            {/* <div className="mx-[50px] m-[20px]">
               <label className="block" htmlFor="text">
                 Photo Url
               </label>
-            </div>
+            </div> */}
 
             <div>
               <button className="btn btn-info w-[300px] p-2 mt-3">

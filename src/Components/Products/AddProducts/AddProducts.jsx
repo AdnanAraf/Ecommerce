@@ -30,7 +30,7 @@ const AddProducts = () => {
       photo,
     };
     // console.log(booking);
-    fetch("http://localhost:5000/ToysData", {
+    fetch("https://toys-server-adnanaraf.vercel.app/ToysData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const AddProducts = () => {
         <h2 className="text-3xl font-extrabold">Add a Toys</h2>
         <form onSubmit={handleAddBook}>
           {/* Toys  name and Seller Name row */}
-          <div className="md:flex mb-8">
+          <div className="md:flex mb-8 gap-[10px]">
             <div className="form-control md:w-1/2">
               <label className="label">
                 <span className="label-text">Toy's Name</span>

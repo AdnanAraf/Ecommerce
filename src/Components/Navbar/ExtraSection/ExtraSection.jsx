@@ -3,64 +3,180 @@ import Categories from "../../Categories/Categories";
 
 const ExtraSection = () => {
   return (
-    <div className="">
-      <div className="grid grid-cols-3 mt-[100px] gap-[60px]">
+    <div className="bg-white w-[96%] h-[150px] mt-[50px] mx-[30px] container  rounded-lg">
+      <div className="grid grid-cols-4 pt-[50px] px-[80px]">
         <div>
-          <div className="relative">
-            <img
-              className="rounded-lg ml-[40px] h-[700px]"
-              src="https://i.ibb.co/q03ZrrC/teddy-bear-two-other-stuffed-animals-are-sitting-together-1340-36035.jpg"
-            ></img>
-
-            <div className="absolute top-[30px] left-[70px] ">
-              <h1 className="text-[25px] font-titleFont font-semibold">
-                Special Offer Now! <br></br>Hurry Up.......
-              </h1>
-            </div>
+          <div className="flex">
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1H5.63636V24.1818H35"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="square"
+              ></path>
+              <path
+                d="M8.72763 35.0002C10.4347 35.0002 11.8185 33.6163 11.8185 31.9093C11.8185 30.2022 10.4347 28.8184 8.72763 28.8184C7.02057 28.8184 5.63672 30.2022 5.63672 31.9093C5.63672 33.6163 7.02057 35.0002 8.72763 35.0002Z"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="square"
+              ></path>
+              <path
+                d="M31.9073 35.0002C33.6144 35.0002 34.9982 33.6163 34.9982 31.9093C34.9982 30.2022 33.6144 28.8184 31.9073 28.8184C30.2003 28.8184 28.8164 30.2022 28.8164 31.9093C28.8164 33.6163 30.2003 35.0002 31.9073 35.0002Z"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="square"
+              ></path>
+              <path
+                d="M34.9982 1H11.8164V18H34.9982V1Z"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="square"
+              ></path>
+              <path
+                d="M11.8164 7.18164H34.9982"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="square"
+              ></path>
+            </svg>
+            <h1 className="text-[18px] font-bold  ml-[10px]">Free Shipping</h1>
           </div>
+          <p className="font-titleFont ml-[45px] mt-[-10px]">
+            From all orders over 100$
+          </p>
         </div>
 
-        <div className="w-[600px] relative">
-          <img
-            className="rounded-lg h-[400px] hover:scale-105 transition duration-500 cursor-pointer "
-            src="https://i.ibb.co/4S4RmqQ/cute-plush-toys-arrangement-23-2150312306.jpg"
-          ></img>
-          <div className="absolute top-[30px] left-[30px]">
-            <h1 className="font-titleFont text-[30px] font-semibold">
-              <button className="h-[64px] w-[100px] rounded-lg bg-pink-700">
-                Kids
-              </button>
-              Toys
+        <div>
+          <div className="flex">
+            <svg
+              width="32"
+              height="34"
+              viewBox="0 0 32 34"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M31 17.4502C31 25.7002 24.25 32.4502 16 32.4502C7.75 32.4502 1 25.7002 1 17.4502C1 9.2002 7.75 2.4502 16 2.4502C21.85 2.4502 26.95 5.7502 29.35 10.7002"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M30.7 2L29.5 10.85L20.5 9.65"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="square"
+              ></path>
+            </svg>
+            <h1 className="text-[18px] font-bold  ml-[10px]">
+              Daily Surprise Offers
             </h1>
           </div>
+          <p className="font-titleFont mt-[-10px]  ml-[40px]">
+            Save up to 25% off
+          </p>
         </div>
+        <div>
+          <div className="flex">
+            <svg
+              width="32"
+              height="35"
+              viewBox="0 0 32 35"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 13H5.5C2.95 13 1 11.05 1 8.5V1H7"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M25 13H26.5C29.05 13 31 11.05 31 8.5V1H25"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M16 28V22"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M16 22C11.05 22 7 17.95 7 13V1H25V13C25 17.95 20.95 22 16 22Z"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="square"
+              ></path>
+              <path
+                d="M25 34H7C7 30.7 9.7 28 13 28H19C22.3 28 25 30.7 25 34Z"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="square"
+              ></path>
+            </svg>
 
-        <div>
-          <div className="relative">
-            <img
-              className="rounded-lg h-[400px] ml-[100px] w-[330px]"
-              src="https://i.ibb.co/VStSs5j/cute-fluffy-monkey-toys-23-2149642394.jpg"
-            ></img>
-            <div className="absolute top-[30px] left-[120px]">
-              <h1 className="font-titleFont text-[25px] text-white font-semibold">
-                50% Special Offer!
-              </h1>
-            </div>
+            <h1 className="text-[18px] font-bold  ml-[10px]">
+              Affortable Prices
+            </h1>
           </div>
+          <p className="font-titleFont ml-[40px] mt-[-10px]">
+            Get Factory direct price
+          </p>
         </div>
-      </div>
-      <div className="flex mt-[-250px] ml-[540px] gap-[20px]">
         <div>
-          <img
-            className="h-[240px] w-[500px] rounded-lg"
-            src="https://i.ibb.co/sgqmhTg/top-view-ping-pong-paddles-with-boxing-gloves-sport-essentials-23-2148523213.jpg"
-          ></img>
-        </div>
-        <div className="">
-          <img
-            className="h-[240px]  rounded-lg w-[420px]"
-            src="https://i.ibb.co/DbkKB1G/Screenshot-5.png"
-          ></img>
+          <div className="flex">
+            <svg
+              width="32"
+              height="38"
+              viewBox="0 0 32 38"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22.6654 18.667H9.33203V27.0003H22.6654V18.667Z"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="square"
+              ></path>
+              <path
+                d="M12.668 18.6663V13.6663C12.668 11.833 14.168 10.333 16.0013 10.333C17.8346 10.333 19.3346 11.833 19.3346 13.6663V18.6663"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="square"
+              ></path>
+              <path
+                d="M31 22C31 30.3333 24.3333 37 16 37C7.66667 37 1 30.3333 1 22V5.33333L16 2L31 5.33333V22Z"
+                stroke="#FFBB38"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="square"
+              ></path>
+            </svg>
+            <h1 className="text-[18px] font-bold  ml-[10px]">
+              Secure Payments
+            </h1>
+          </div>
+          <p className="font-titleFont ml-[40px] mt-[-10px]">
+            100% protected payments
+          </p>
         </div>
       </div>
     </div>

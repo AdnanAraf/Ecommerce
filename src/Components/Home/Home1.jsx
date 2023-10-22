@@ -3,6 +3,8 @@ import React from "react";
 import ExtraSection from "../Navbar/ExtraSection/ExtraSection";
 import Slider from "../Navbar/Background/Slider";
 import Categories from "../Categories/Categories";
+import FeatureProduct from "../FeaturedProduct/FeatureProduct";
+import Differentlogo from "../Differentlogo/Differentlogo";
 
 const Home1 = () => {
   return (
@@ -10,7 +12,8 @@ const Home1 = () => {
       <Slider />
       {/* <Gallery /> */}
       <ExtraSection />
-      <Categories />
+      <FeatureProduct />
+      <Differentlogo />
     </div>
   );
 };

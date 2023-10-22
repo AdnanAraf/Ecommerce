@@ -6,21 +6,44 @@ import Modal from "../Modal/Modal";
 
 const AllProducts = () => {
   const [allproduct, setallproduct] = useState([]);
-
+  const [searchText, setSearchText] = useState("");
   const [singleData, setSingleData] = useState({});
-
+  const [product, setproduct] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/ToysData")
+    fetch("https://toys-server-adnanaraf.vercel.app/ToysData")
       .then((res) => res.json())
       .then((data) => setallproduct(data));
   }, []);
   const showModal = (id) => {
-    fetch(`http://localhost:5000/ToysData/${id}`)
+    fetch(`https://toys-server-adnanaraf.vercel.app/ToysData/${id}`)
       .then((res) => res.json())
       .then((data) => setSingleData(data));
   };
+  const handleSearch = () => {
+    fetch(
+      `https://toys-server-adnanaraf.vercel.app/getJobsByText/${searchText}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setallproduct(data);
+      });
+  };
   return (
     <div>
+      <div className="search-box p-2 text-center mt-[80px] ">
+        <input
+          onChange={(e) => setSearchText(e.target.value)}
+          type="text"
+          className="p-1  border-2 w-[800px] border-blue-300 h-[40px]"
+        />
+        <button
+          onClick={handleSearch}
+          className="mx-[10px] h-[40px] w-[164px] bg-black text-white font-titleFont"
+        >
+          Search
+        </button>
+      </div>
       <div className="overflow-x-auto w-full mt-[150px]">
         <table className="table w-full">
           {/* head */}

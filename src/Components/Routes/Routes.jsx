@@ -11,6 +11,10 @@ import AllProducts from "../Products/AllProducts/AllProducts";
 import MyProducts from "../Products/MyProducts";
 import UpdateProduct from "../Products/UpdateProduct/UpdateProduct";
 import Shop from "../Products/Shop/Shop";
+import Payment from "../Payment/Payment";
+import SingleCard from "../Products/Shop/SingleCard/SingleCard";
+import UpdateCount from "../Products/UpdateCount/UpdateCount";
+import FeatureProductCard from "../FeaturedProduct/featureProductCard";
 
 const Routes = createBrowserRouter([
   {
@@ -33,7 +37,9 @@ const Routes = createBrowserRouter([
         path: "/details/:_id",
         element: <CategoriesDetailsCard />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/CategoriesCollection/${params.id}`),
+          fetch(
+            `https://toys-server-adnanaraf.vercel.app/CategoriesCollection/${params.id}`
+          ),
       },
       {
         path: "Addproduct",
@@ -51,11 +57,35 @@ const Routes = createBrowserRouter([
         path: "update/:id",
         element: <UpdateProduct />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/ToysData/${params.id}`),
+          fetch(
+            `https://toys-server-adnanaraf.vercel.app/ToysData/${params.id}`
+          ),
       },
       {
         path: "Shop",
         element: <Shop />,
+      },
+      {
+        path: "payment",
+        element: <Payment />,
+      },
+      {
+        path: "addcard/:id",
+        element: <SingleCard />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/AllProduct/${params.id}`),
+      },
+      {
+        path: "updateCount/:id",
+        element: <UpdateCount />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/carts/${params.id}`),
+      },
+      {
+        path: "detailscart/:id",
+        element: <FeatureProductCard />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/FeatureProduct/${params.id}`),
       },
     ],
   },

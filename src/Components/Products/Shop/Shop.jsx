@@ -12,30 +12,28 @@ const Shop = () => {
   const [product, setproduct] = useState([]);
   const [asc, setAsc] = useState(true);
   const [searchText, setSearchText] = useState("");
+
   const [showproduct, setshowproduct] = useState({});
   const [fourColumn, setgrid] = useState(true);
   useEffect(() => {
-    fetch(`http://localhost:5000/AllProduct?sort=${asc ? "asc" : "desc"}`)
+    fetch(
+      `https://toys-server-adnanaraf.vercel.app/AllProduct?sort=${
+        asc ? "asc" : "desc"
+      }`
+    )
       .then((res) => res.json())
       .then((data) => setproduct(data));
   }, [asc]);
   //   useEffect(() => {
-  //     fetch(`http://localhost:5000/AllProduct?sort=${asc ? "asc" : "desc"}`)
+  //     fetch(`https://toys-server-adnanaraf.vercel.app/AllProduct?sort=${asc ? "asc" : "desc"}`)
   //       .then((res) => res.json())
   //       .then((data) => {
   //         setcategory(data);
   //       });
   //   }, [asc]);
-  const handleSearch = () => {
-    fetch(`http://localhost:5000/getJobsByText/${searchText}`)
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        setproduct(data);
-      });
-  };
+
   const showModal = (id) => {
-    fetch(`http://localhost:5000/AllProduct/${id}`)
+    fetch(`https://toys-server-adnanaraf.vercel.app/AllProduct/${id}`)
       .then((res) => res.json())
       .then((data) => setshowproduct(data));
   };
@@ -48,46 +46,100 @@ const Shop = () => {
   };
 
   const dolls = product.filter((item) => item.title === "Dolls");
-  const sports = product.filter((item) => item.title === "sports");
   const musical = product.filter((item) => item.title === "musical");
-  const engineering = product.filter((item) => item.title === "Engineering");
   const cars = product.filter((item) => item.title === "cars");
+  const sofa = product.filter((item) => item.title === "sofa");
+  const watch = product.filter((item) => item.title === "watch");
+  const Headphone = product.filter((item) => item.title === "Headphone");
+  const Mobile = product.filter((item) => item.title === "Mobile");
+  const tshirtandshoe = product.filter(
+    (item) => item.title === "tshirtandshoe"
+  );
   const allproduct = product.filter((item) => item.category === "allproduct");
   const handleSortChange = (event) => {
     const sortOrder = event.target.value === "asc" ? true : false;
     setAsc(sortOrder);
   };
+  const handleSearch = () => {
+    fetch(
+      `https://toys-server-adnanaraf.vercel.app/getJobsByText/${searchText}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setproduct(data);
+      });
+  };
 
   return (
     <div>
       <div>
-        <img
-          className=" h-[700px] w-full mt-[0px]"
-          src="https://i.ibb.co/TbD53fz/6608951-AMZ-play-doh.jpg"
-        ></img>
+        <div className="bg-cyan-700 lg:h-[500px] w-full ">
+          <div className="flex justify-between lg:pt-[0px] pt-[50px]">
+            <div>
+              <h1 className="font-titleFont text-white lg:text-[35px] lg:w-[900px] w-[400px] font-semibold lg:pt-[100px] lg:pl-[100px] pl-[10px]">
+                Let's feel the music with best sound quality Black Corded
+                Headset
+              </h1>
+              <p className="lg:pl-[100px] font-titleFont font-semibold lg:text-[16px] lg:pt-[20px]  pl-[10px]  text-white w-[180px]  lg:w-[700px] pt-[30px]">
+                Shop is the Latest technology available here in e-shop , Sales &
+                discount offers everyday and Connect your conversations with the
+                tools and services that you use to get the job done.
+              </p>
+            </div>
+            <img
+              className="lg:h-[500px] h-[200px] lg:mr-[100px] ml-[-500px] rotate-12 lg:mt-[0px] mt-[70px]"
+              src="https://i.ibb.co/3y2hGws/black-headphones-digital-device-53876-96805-removebg-preview.png"
+            ></img>
+          </div>
+        </div>
       </div>
       <div>
-        <div className=" absolute  top-[900px] left-[1200px]  ">
-          {/* <button onClick={() => setAsc(!asc)}>
+        <div className="flex ">
+          {/* <input
+            onChange={(e) => setSearchText(e.target.value)}
+            type="text"
+            className="p-1  border-2 w-[300px] border-blue-300 h-[40px]"
+          />
+          <button
+            onClick={handleSearch}
+            className="mx-[10px] h-[40px] w-[164px] bg-black text-white font-titleFont"
+          >
+            Search
+          </button> */}
+          <div className=" absolute  lg:top-[670px] top-[550px]  lg:left-[1200px]  ">
+            {/* <button onClick={() => setAsc(!asc)}>
             {asc ? "Price: Low to High" : "Price: High to Low"}
           </button> */}
-          <select
-            className=" select  bg-gray-100 font-titleFont text-[16px]"
-            onChange={handleSortChange}
-          >
-            <option value="asc">Price: Low to High</option>
+            <select
+              className=" select  bg-gray-100 font-titleFont text-[16px]"
+              onChange={handleSortChange}
+            >
+              <option value="asc">Price: Low to High</option>
 
-            <option className="h-[60px] w-[160px]" value="desc ">
-              Price: High To Low
-            </option>
-          </select>
+              <option className="h-[60px] w-[160px]" value="desc ">
+                Price: High To Low
+              </option>
+            </select>
+          </div>
         </div>
-        <div className="flex gap-[30px] absolute ml-[480px] mt-[70px]">
+        <div className="flex gap-[30px] absolute lg:ml-[480px]  ml-[260px] lg:mt-[70px] mt-[120px]">
           <div>
-            <FaGripHorizontal
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
               onClick={horizontal}
-              className="h-[25px] w-[25px]"
-            ></FaGripHorizontal>
+              className="h-[30px] w-[30px] lg:ml-[600px] mt-[-5px]"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+              />
+            </svg>
           </div>
           <div>
             <FaGripVertical
@@ -97,73 +149,54 @@ const Shop = () => {
           </div>
         </div>
 
-        <div class>
-          <Tabs>
+        <div>
+          <Tabs className="lg:flex">
             <TabList>
-              <div className="dropdown dropdown-bottom cursor-pointer mt-[50px] divide-y mx-[100px]  ">
-                <label
-                  tabIndex={0}
-                  className="btn m-1 w-[300px] bg-blue-500 font-medium"
-                >
-                  <h1 className="font-titleFont text-[18px] font-normal ">
-                    Product Categories
-                  </h1>
-                </label>
-                <ul
-                  tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-[250px]"
-                >
-                  {/* <Tab className="pt-[15px] pl-[15px]   text-[18px] font-bodyFont hover:bg-blue-300  h-[50px]">
-                    Sofa
-                  </Tab>
-                  <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont hover-underline hover:bg-blue-300  h-[50px]">
-                    Watch
-                  </Tab>
+              <div className="dropdown dropdown-bottom cursor-pointer   divide-y lg:mx-[100px] mt-[200px] border-2  w-[300px] rounded-t-lg  ">
+                <h1 className="font-titleFont text-[18px]  text-center bg-blue-600 text-white pt-[20px] rounded-t-lg  font-semibold h-[70px]">
+                  Product Categories
+                </h1>
 
-                  <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover-underline hover:bg-blue-300  h-[50px]">
-                    Mobile
-                  </Tab>
-                  <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
-                    HeadPhone
-                  </Tab> */}
-                  <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
-                    All Product
-                  </Tab>
-                  <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
-                    Dolls
-                  </Tab>
-                  <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
-                    Cars
-                  </Tab>
-                  <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
-                    Engineering Toys
-                  </Tab>
-                  <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
-                    Musical
-                  </Tab>
-                  <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
-                    Sports
-                  </Tab>
-                </ul>
+                <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
+                  All Product
+                </Tab>
+                <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
+                  Dolls
+                </Tab>
+                <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
+                  Cars
+                </Tab>
+                {/* <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
+                  Engineering Toys
+                </Tab> */}
+                <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
+                  Musical
+                </Tab>
+                {/* <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
+                  Sports
+                </Tab> */}
+                <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
+                  Sofa
+                </Tab>
+                <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
+                  Watch
+                </Tab>
+                <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
+                  headphone
+                </Tab>
+                <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
+                  Mobile
+                </Tab>
+                <Tab className=" pt-[15px]  pl-[15px]  text-[16px] font-bodyFont  hover:bg-blue-300   h-[50px]">
+                  Tshirt and Shoe
+                </Tab>
               </div>
             </TabList>
-            <div className="search-box p-2 text-center mt-[80px] ">
-              <input
-                onChange={(e) => setSearchText(e.target.value)}
-                type="text"
-                className="p-1  border-2 w-[800px] border-blue-300 h-[40px]"
-              />
-              <button
-                onClick={handleSearch}
-                className="mx-[10px] h-[40px] w-[164px] bg-black text-white font-titleFont"
-              >
-                Search
-              </button>
-            </div>
-            <div>
+
+            <div className="mt-[100px]">
               {fourColumn ? (
                 <div>
-                  <TabPanel className="grid grid-cols-4 mt-[100px] gap-[40px]">
+                  <TabPanel className="lg:grid lg:grid-cols-3 mt-[100px] lg:gap-[40px] gap-[100px]">
                     {allproduct.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -171,11 +204,8 @@ const Shop = () => {
                         showModal={showModal}
                       />
                     ))}
-                    {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
                   </TabPanel>
-                  <TabPanel className="grid grid-cols-4  gap-[40px]">
+                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
                     {dolls.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -183,11 +213,8 @@ const Shop = () => {
                         showModal={showModal}
                       />
                     ))}
-                    {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
                   </TabPanel>
-                  <TabPanel className="grid grid-cols-4 gap-[40px]">
+                  <TabPanel className="lg:grid lg:grid-cols-3 lg:lg:gap-[40px] gap-[20px]">
                     {cars.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -195,11 +222,8 @@ const Shop = () => {
                         showModal={showModal}
                       />
                     ))}
-                    {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
                   </TabPanel>
-                  <TabPanel className="grid grid-cols-4  gap-[40px]">
+                  {/* <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
                     {engineering.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -207,12 +231,9 @@ const Shop = () => {
                         showModal={showModal}
                       />
                     ))}
-                    {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
-                  </TabPanel>
+                  </TabPanel> */}
 
-                  <TabPanel className="grid grid-cols-4  gap-[40px]">
+                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
                     {musical.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -220,12 +241,9 @@ const Shop = () => {
                         showModal={showModal}
                       />
                     ))}
-                    {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
                   </TabPanel>
 
-                  <TabPanel className="grid grid-cols-4  gap-[40px]">
+                  {/* <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
                     {sports.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -233,9 +251,51 @@ const Shop = () => {
                         showModal={showModal}
                       />
                     ))}
-                    {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
+                  </TabPanel> */}
+                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                    {sofa.map((item) => (
+                      <ShopCard
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                  </TabPanel>
+                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                    {watch.map((item) => (
+                      <ShopCard
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                  </TabPanel>
+                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                    {Headphone.map((item) => (
+                      <ShopCard
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                  </TabPanel>
+                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                    {Mobile.map((item) => (
+                      <ShopCard
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                  </TabPanel>
+                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                    {tshirtandshoe.map((item) => (
+                      <ShopCard
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
                   </TabPanel>
                 </div>
               ) : (
@@ -248,11 +308,8 @@ const Shop = () => {
                         showModal={showModal}
                       />
                     ))}
-                    {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
                   </TabPanel>
-                  <TabPanel className="grid grid-cols-1  gap-[40px]">
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
                     {dolls.map((item) => (
                       <Horizontal
                         key={item._id}
@@ -260,11 +317,8 @@ const Shop = () => {
                         showModal={showModal}
                       />
                     ))}
-                    {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
                   </TabPanel>
-                  <TabPanel className="grid grid-cols-1 gap-[40px]">
+                  <TabPanel className="grid grid-cols-1 lg:gap-[40px] gap-[20px]">
                     {cars.map((item) => (
                       <Horizontal
                         key={item._id}
@@ -272,24 +326,9 @@ const Shop = () => {
                         showModal={showModal}
                       />
                     ))}
-                    {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
-                  </TabPanel>
-                  <TabPanel className="grid grid-cols-1  gap-[40px]">
-                    {engineering.map((item) => (
-                      <Horizontal
-                        key={item._id}
-                        item={item}
-                        showModal={showModal}
-                      />
-                    ))}
-                    {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
                   </TabPanel>
 
-                  <TabPanel className="grid grid-cols-1  gap-[40px]">
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
                     {musical.map((item) => (
                       <Horizontal
                         key={item._id}
@@ -302,23 +341,57 @@ const Shop = () => {
             ))} */}
                   </TabPanel>
 
-                  <TabPanel className="grid grid-cols-1  gap-[40px]">
-                    {sports.map((item) => (
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
+                    {sofa.map((item) => (
                       <Horizontal
                         key={item._id}
                         item={item}
                         showModal={showModal}
                       />
                     ))}
-                    {/* {sofa.map((item1) => (
-              <CategoriesCard key ={item1._id}></CategoriesCard>
-            ))} */}
+                  </TabPanel>
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
+                    {watch.map((item) => (
+                      <Horizontal
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                  </TabPanel>
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
+                    {Headphone.map((item) => (
+                      <Horizontal
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                  </TabPanel>
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
+                    {Mobile.map((item) => (
+                      <Horizontal
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
+                  </TabPanel>
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
+                    {tshirtandshoe.map((item) => (
+                      <Horizontal
+                        key={item._id}
+                        item={item}
+                        showModal={showModal}
+                      />
+                    ))}
                   </TabPanel>
                 </div>
               )}
             </div>
           </Tabs>
         </div>
+
         <ShopModal showproduct={showproduct} />
       </div>
     </div>

@@ -1,0 +1,60 @@
+[
+  {
+    "title": "Iphone 15",
+    "img": "https://i.ibb.co/rwGccb0/i-Phone-15-General-Feature-Black.jpg",
+    "rating": "4.8",
+    "description": "The iPhone 15 and iPhone 15 Plus are smartphones designed, developed, and marketed by Apple Inc. They are the seventeenth-generation iPhones, succeeding the iPhone 14 and iPhone 14 Plus. The devices were announced on September 12, 2023, during the Apple Event at Apple Park in Cupertino, California alongside the higher-priced iPhone 15 Pro and 15 Pro Max flagships. Pre-orders began on September 15, 2023, and the devices were made available on September 22, 2023.The iPhone 15 features a 60Hz 6.1-inch (155 mm) display with Super Retina XDR OLED technology at a resolution of 2556×1179 pixels and a pixel density of about 460 PPI. The iPhone 15 Plus features a 60Hz 6.7-inch (170 mm) display with the same technology at a resolution of 2796×1290 pixels and a pixel density of about 460 PPI. Both models have the Super Retina XDR OLED display with improved typical brightness up to 1,000 nits, peak brightness (HDR) up to 1,600 nits, and peak brightness (outdoor) up to 2,000 nits.[5] The Dynamic Island feature is now standard on iPhone 15, replacing the display notch.[10] The iPhone 15 Pro is the same size as the iPhone 15, while the 15 Pro Max is the same size as 15 Plus.",
+    "price": 2000
+  },
+  {
+    "title": "Lenovo Tab P10 | 10.1 Family Entertainment Tablet",
+    "img": "https://i.ibb.co/WpVXmRt/Screenshot-24.png",
+    "rating": "4.8",
+    "description": "The A10 has a 10.1-inch IPS display with a resolution of 1280 by 800. Its CPU is a 1.3 gigahertz quad-core MediaTek processor. It has 1 gigabyte of RAM. A 5 megapixel rear camera and 2 megapixel front camera are included. The A10 has two front-facing speakers with enhancements from Dolby. A microSD card slot allows storage expansion. Wi-Fi 802.11b/g/n are supported, as is Bluetooth 4.0. With a capacity of 6,340 mAh, the A10 offers relatively long battery life. The A10's shell is dark blue and has a smooth, matte finish, with rounded corners. It weighs 1.2 pounds.[1]The A10 has what Lenovo calls a  that offers easy access to recent apps and shortcuts for display controls. It can be swiping from the bezel to the center of the screen. Lenovo packages the A10 with an app from Dolby Audio to manage sound settings. The A10 ships with Android 4.4.2 with an upgrade to version 4.4.3 available for download.[1]",
+    "price": 800.08
+  },
+  {
+    "title": "Google Pixel7",
+    "img": "https://i.ibb.co/hCfctHz/images-q-tbn-ANd9-Gc-T4f-HK2-UOGQACLU59-I6l4zg-UTz-UF6-Fzkc5-Krw-usqp-CAU.jpg",
+    "rating": "4.8",
+    "description": "The Pixel 7 and Pixel 7 Pro are a pair of Android smartphones designed, developed, and marketed by Google as part of the Google Pixel product line. They serve as the successor to the Pixel 6 and Pixel 6 Pro, respectively. The phones were first previewed in May 2022, during the Google I/O keynote. They are powered by the second-generation Google Tensor chip, and feature a design similar to that of the Pixel 6 series. They shipped with Android 13.The Pixel 7 and Pixel 7 Pro were officially announced on October 6, 2022, at the annual Made by Google event, and were released in the United States on October 13.The Pixel 7 has a 6.3 in (160 mm) FHD+ 1080p OLED display at 416 ppi with a 2400 × 1080 pixel resolution and a 20:9 aspect ratio, while the Pixel 7 Pro has a 6.7 in (170 mm) QHD+ 1440p LTPO OLED curved-edge display at 512 ppi with a 3120 × 1440 pixel resolution and a 19.5:9 aspect ratio.",
+    "price": 1000
+  },
+  {
+    "title": "Acer Nitro New Laptop",
+    "img": "https://i.ibb.co/kqG8pR4/images-q-tbn-ANd9-Gc-SS5r0s6-Jlhpg-AEe3jd-STp-Kz-Lp2-GV9-Mkwo-Biw-usqp-CAU.jpg",
+    "rating": "4.8",
+    "description": "Acer Inc. (/ˈeɪsər/ AY-sər) is a Taiwanese multinational hardware and electronics corporation specializing in advanced electronics technology, headquartered in Xizhi, New Taipei City. Its products include desktop PCs, laptop PCs (clamshells, 2-in-1s, convertibles and Chromebooks), tablets, servers, storage devices, virtual reality devices, displays, smartphones and peripherals, as well as gaming PCs and accessories under its Predator brand. Acer is the world's 6th-largest PC vendor by unit sales as of September 2022.[4]In the early 2000s, Acer implemented a new business model, shifting from a manufacturer to a designer, marketer, and distributor of products, while performing production processes via contract manufacturers.[5] Currently, in addition to its core IT products business, Acer also has a new business entity that focuses on the integration of cloud services and platforms, and the development of smartphones and wearable devices with value-added IoT applications.",
+    "price": 1050
+  },
+
+  {
+    "title": "Mouse",
+    "img": "https://i.ibb.co/sbmL8sK/images-q-tbn-ANd9-Gc-RCc3-Iwv6-LA587-U-o-Dt-Lup-Paz-Jt-Huzu-ZEEz-Zw-usqp-CAU.jpg",
+    "rating": "4.8",
+    "description": "An optical mouse is a computer mouse which uses a light source, typically a light-emitting diode (LED), and a light detector, such as an array of photodiodes, to detect movement relative to a surface. Variations of the optical mouse have largely replaced the older mechanical mouse design, which uses moving parts to sense motion.The earliest optical mice detected movement on pre-printed mousepad surfaces. Modern optical mice work on most opaque diffusely reflective surfaces like paper, but most of them do not work properly on specularly reflective surfaces like polished stone or transparent surfaces like glass. Optical mice that use dark field illumination can function reliably even on such surfaces.",
+    "price": 22.58
+  },
+
+  {
+    "title": "Watch",
+    "img": "https://i.ibb.co/S3gy9S2/smartwatches-mockup-1332-20527.jpg",
+    "rating": "5",
+    "description": "The cost of a Rolex can range anywhere between $6,500 all the way up to $75,000 MSRP. Factors that affect pricing are materials, new movements, collection popularity, and complications. The average price for most Rolex watches falls between $7,000 – $12,000 MSRP. Most of those references are made up of stainless steel watches and two-tone watches.  https://i.ibb.co/Nm9N0qg/Screenshot-7.png",
+    "price": 26.15
+  },
+  {
+    "title": "Samsung S21 Ultra",
+    "img": "https://i.ibb.co/41ttTr5/Screenshot-7.png",
+    "rating": "5",
+    "description": "Samsung Galaxy S21 Ultra 5G is officially announced on January 14, 2021. The smartphone is pack with 12 GB and 16 GB RAM with 128 GB, 256 GB, 512 GB internal storage options. The device is built with a Glass front (Gorilla Glass Victus), a glass back (Gorilla Glass), and an aluminum frame. Samsung Galaxy S21 Ultra 5G is fueled with a non-removable Li-Po 5000 mAh battery + Fast charging 25W + USB Power Delivery 3.0 + Fast Qi/PMA wireless charging 15W + Reverse wireless charging 4.5W. The smartphone features a 6.8 inches Dynamic AMOLED 2X display that has a 1440 x 3200 pixels resolution. The device comes in Phantom Black, Phantom Silver, Phantom Titanium, Phantom Navy, and Phantom Brown. The smartphone consists of a quad-camera: 108 MP (wide) + 10 MP (periscope telephoto) + 10 MP (telephoto) + 12 MP (ultrawide) while on the front there is a 40 MP (wide). The sensors include Fingerprint (under display, ultrasonic), accelerometer, gyro, proximity, compass, and barometer.",
+    "price": 1200
+  },
+  {
+    "title": "Dualshock Gaming Remote Controller Conso...",
+    "img": "https://i.ibb.co/x64BgrZ/Screenshot-8.png",
+    "rating": "5",
+    "description": "1 cross button function two left and right 3D joystick functions 8 numeric keys 4 function keys. With 7 channels of LED indication.The device is built with a Glass front (Gorilla Glass Victus), a glass back (Gorilla Glass), and an aluminum frame. Samsung Galaxy S21 Ultra 5G is fueled with a non-removable Li-Po 5000 mAh battery + Fast charging 25W + USB Power Delivery 3.0 + Fast Qi/PMA wireless charging 15W + Reverse wireless charging 4.5W. The smartphone features a 6.8 inches Dynamic AMOLED 2X display that has a 1440 x 3200 pixels resolution. The device comes in Phantom Black, Phantom Silver, Phantom Titanium, Phantom Navy, and Phantom Brown. The smartphone consists of a quad-camera: 108 MP (wide) + 10 MP (periscope telephoto) + 10 MP (telephoto) + 12 MP (ultrawide) while on the front there is a 40 MP (wide). The sensors include Fingerprint (under display, ultrasonic), accelerometer, gyro, proximity, compass, and barometer.",
+    "price": 300
+  }
+]

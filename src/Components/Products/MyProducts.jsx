@@ -11,7 +11,7 @@ const MyProducts = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys/${user?.email}`)
+    fetch(`https://toys-server-adnanaraf.vercel.app/myToys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setbooking(data));
   }, [user]);
@@ -26,7 +26,7 @@ const MyProducts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/ToysData/${_id}`, {
+        fetch(`https://toys-server-adnanaraf.vercel.app/ToysData/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

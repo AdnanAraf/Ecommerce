@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ReactImageMagnify from "react-image-magnify";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const CategoriesDetailsCard = () => {
   const { _id } = useParams();
   console.log(_id);
   const [category, setcategory] = useState({});
   useEffect(() => {
-    fetch("http://localhost:5000/CategoriesCollection")
+    fetch("https://toys-server-adnanaraf.vercel.app/CategoriesCollection")
       .then((res) => res.json())
       .then((data) => {
         const result = data.find((item) => item._id == _id);
@@ -51,11 +51,12 @@ const CategoriesDetailsCard = () => {
           little or no value or importance; a trifle.
         </p>
         <p className="text-[20px] mt-[10px]">Price:${category.price}</p>
+
         <button
           // onClick={() => HandleClick(item)}
           className="mt-[10px] font-titleFont bg-black text-white h-[50px] w-[154px] text-[16px] rounded-md"
         >
-          Add to Cart
+          Shop Now
         </button>
       </div>
     </div>
