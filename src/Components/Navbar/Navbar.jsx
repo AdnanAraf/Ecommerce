@@ -22,8 +22,8 @@ const Navbar = () => {
     setopen(open);
   };
   return (
-    <div className="sticky top-0 z-50">
-      <div className=" lg:flex bg-gray-300 gap-[200px] ">
+    <div className="sticky top-0 z-50 ">
+      <div className=" lg:flex bg-gray-300 gap-[200px] overflow-hidden">
         <h1 className="lg:px-[60px] lg:p-[20px]    font-semibold">
           Enjoy 10% off everything with code GIFT2023
         </h1>
@@ -40,9 +40,9 @@ const Navbar = () => {
               <span className="text-white">Kiddo</span>FunFinds
             </h1>
           </div>
-          <div className="dropdown dropdown-bottom dropdown-end lg:hidden block mr-[30px] mt-[-5px]">
+          <div className="dropdown dropdown-bottom dropdown-end lg:hidden   block mr-[110px] mt-[-5px]">
             <label tabIndex={0} className=" m-1">
-              <FaBars className="h-[30px] w-[15px]"></FaBars>
+              <FaBars className="h-[30px] w-[15px] "></FaBars>
             </label>
             <ul
               tabIndex={0}
@@ -77,12 +77,16 @@ const Navbar = () => {
                       ></img>
                     </div>
                   </Link>
-                  <div>
-                    <h1 className=" text-center absolute mt-[10px] ml-[20px]    bg-green-300 h-[20px] w-[20px] rounded-full">
-                      {Wish?.length}
-                    </h1>
-                    <FaHeart className="h-[30px] w-[30px] mt-[20px] "></FaHeart>
-                  </div>
+
+                  <Link to="Heart">
+                    <div>
+                      <h1 className=" text-center absolute mt-[10px] ml-[20px]    bg-green-300 h-[20px] w-[20px] rounded-full">
+                        {Wish?.length}
+                      </h1>
+
+                      <FaHeart className="h-[30px] w-[30px] mt-[20px] "></FaHeart>
+                    </div>
+                  </Link>
                   {/* <img
               onClick={() => handleImageClick(!open)}
               className="h-[50px] w-[50px] rounded-full cursor-pointer mt-[15px]"
@@ -119,11 +123,10 @@ const Navbar = () => {
               ) : (
                 <div>
                   <Link
-                    className="p-[10px] mr-[260px]  text-black font-LogoFont1 text-[20px] hover:text-red-500"
+                    className="lg:p-[10px]   lg:mr-[260px]  text-black font-LogoFont1 text-[20px] hover:text-red-500"
                     to="login"
                   >
-                    <button className="h-[40px] w-[100px] bg-white">
-                      {" "}
+                    <button className="h-[40px] w-[100px] bg-white ml-[-5px] ">
                       Login
                     </button>
                   </Link>
@@ -154,7 +157,7 @@ const Navbar = () => {
             LogOut
           </Link>
         </div> */}
-          <div className="lg:block hidden">
+          <div className="lg:block hidden ">
             {user?.email ? (
               <div className="flex gap-[30px] ">
                 <Link to="payment">
@@ -168,12 +171,15 @@ const Navbar = () => {
                     ></img>
                   </div>
                 </Link>
-                <div>
-                  <h1 className=" text-center absolute mt-[10px] ml-[20px]    bg-green-300 h-[20px] w-[20px] rounded-full">
-                    {Wish?.length}
-                  </h1>
-                  <FaHeart className="h-[30px] w-[30px] mt-[15px]"></FaHeart>
-                </div>
+                <Link to="Heart">
+                  <div>
+                    <h1 className=" text-center absolute mt-[px] ml-[20px]    bg-green-300 h-[20px] w-[20px] rounded-full">
+                      {Wish?.length}
+                    </h1>
+                    <FaHeart className="h-[30px] w-[30px] mt-[15px]"></FaHeart>
+                  </div>
+                </Link>
+
                 {/* <img
               onClick={() => handleImageClick(!open)}
               className="h-[50px] w-[50px] rounded-full cursor-pointer mt-[15px]"
@@ -212,7 +218,10 @@ const Navbar = () => {
                 className="p-[10px] mr-[260px]  text-black font-LogoFont1 text-[20px] hover:text-red-500"
                 to="login"
               >
-                <button className="h-[40px] w-[100px] bg-white"> Login</button>
+                <button className="h-[40px] w-[100px] bg-white mt-[10px]">
+                  {" "}
+                  Login
+                </button>
               </Link>
             )}
           </div>

@@ -22,7 +22,7 @@ const ShopCard = ({ item, showModal }) => {
   };
 
   const wishList = (product) => {
-    if (user && user.email) {
+    if (user && user?.email) {
       const productitem = {
         MenuItemId: _id,
         img,
@@ -61,9 +61,9 @@ const ShopCard = ({ item, showModal }) => {
     <div>
       <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <div className="relative ">
-          <Link to={`/addcard/${_id}`}>
+          <Link className="" to={`/addcard/${_id}`}>
             <div
-              className="h-[350px] w-[300px] bg-white shadow-2xl   mx-auto  transition duration-200 transform hover:translate-y-2 "
+              className="h-[350px] w-[300px] bg-white shadow-2xl m-[20px] lg:m-[0px]  mx-auto  transition duration-200 transform hover:translate-y-2 "
               data-aos="fade-right"
             >
               <img className="h-[200px] w-[200px] m-auto " src={img}></img>

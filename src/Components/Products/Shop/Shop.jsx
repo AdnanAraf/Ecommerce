@@ -72,7 +72,7 @@ const Shop = () => {
   };
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <div>
         <div className="bg-cyan-700 lg:h-[500px] w-full ">
           <div className="flex justify-between lg:pt-[0px] pt-[50px]">
@@ -132,7 +132,7 @@ const Shop = () => {
               strokeWidth={1.5}
               stroke="currentColor"
               onClick={horizontal}
-              className="h-[30px] w-[30px] lg:ml-[600px] mt-[-5px]"
+              className="h-[30px] w-[30px] lg:ml-[600px] mt-[-5px] "
             >
               <path
                 strokeLinecap="round"
@@ -144,7 +144,7 @@ const Shop = () => {
           <div>
             <FaGripVertical
               onClick={Vertical}
-              className="h-[25px] w-[25px]"
+              className="h-[25px] w-[25px] lg:block hidden"
             ></FaGripVertical>
           </div>
         </div>
@@ -196,7 +196,7 @@ const Shop = () => {
             <div className="mt-[100px]">
               {fourColumn ? (
                 <div>
-                  <TabPanel className="lg:grid lg:grid-cols-3 mt-[100px] lg:gap-[40px] gap-[100px]">
+                  <TabPanel className="lg:grid lg:grid-cols-3 mt-[100px] lg:gap-[40px] ">
                     {allproduct.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -205,7 +205,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel>
-                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="lg:grid lg:grid-cols-3  lg:gap-[40px] ">
                     {dolls.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -214,7 +214,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel>
-                  <TabPanel className="lg:grid lg:grid-cols-3 lg:lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="lg:grid lg:grid-cols-3 lg:gap-[40px] ">
                     {cars.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -223,7 +223,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel>
-                  {/* <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                  {/* <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] ">
                     {engineering.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -233,7 +233,7 @@ const Shop = () => {
                     ))}
                   </TabPanel> */}
 
-                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="lg:grid lg:grid-cols-3  lg:gap-[40px] ">
                     {musical.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -243,7 +243,7 @@ const Shop = () => {
                     ))}
                   </TabPanel>
 
-                  {/* <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                  {/* <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] ">
                     {sports.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -252,7 +252,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel> */}
-                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="lg:grid lg:grid-cols-3 lg:gap-[40px] ">
                     {sofa.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -261,7 +261,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel>
-                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="lg:grid lg:grid-cols-3 lg:gap-[40px] ">
                     {watch.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -270,7 +270,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel>
-                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="lg:grid lg:grid-cols-3  lg:gap-[40px] ">
                     {Headphone.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -279,7 +279,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel>
-                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="lg:grid lg:grid-cols-3 lg:gap-[40px] ">
                     {Mobile.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -288,7 +288,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel>
-                  <TabPanel className="lg:grid lg:grid-cols-3 lg: lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="lg:grid lg:grid-cols-3  lg:gap-[40px] ">
                     {tshirtandshoe.map((item) => (
                       <ShopCard
                         key={item._id}
@@ -300,7 +300,7 @@ const Shop = () => {
                 </div>
               ) : (
                 <div>
-                  <TabPanel className="grid grid-cols-1 gap-[20px]  mt-[100px] ">
+                  <TabPanel className="grid grid-cols-1   mt-[100px] ">
                     {allproduct.map((item) => (
                       <Horizontal
                         key={item._id}
@@ -309,7 +309,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel>
-                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] ">
                     {dolls.map((item) => (
                       <Horizontal
                         key={item._id}
@@ -318,7 +318,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel>
-                  <TabPanel className="grid grid-cols-1 lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="grid grid-cols-1 lg:gap-[40px] ">
                     {cars.map((item) => (
                       <Horizontal
                         key={item._id}
@@ -328,7 +328,7 @@ const Shop = () => {
                     ))}
                   </TabPanel>
 
-                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] ">
                     {musical.map((item) => (
                       <Horizontal
                         key={item._id}
@@ -341,7 +341,7 @@ const Shop = () => {
             ))} */}
                   </TabPanel>
 
-                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] ">
                     {sofa.map((item) => (
                       <Horizontal
                         key={item._id}
@@ -350,7 +350,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel>
-                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] ">
                     {watch.map((item) => (
                       <Horizontal
                         key={item._id}
@@ -359,7 +359,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel>
-                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] ">
                     {Headphone.map((item) => (
                       <Horizontal
                         key={item._id}
@@ -368,7 +368,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel>
-                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] ">
                     {Mobile.map((item) => (
                       <Horizontal
                         key={item._id}
@@ -377,7 +377,7 @@ const Shop = () => {
                       />
                     ))}
                   </TabPanel>
-                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] gap-[20px]">
+                  <TabPanel className="grid grid-cols-1  lg:gap-[40px] ">
                     {tshirtandshoe.map((item) => (
                       <Horizontal
                         key={item._id}

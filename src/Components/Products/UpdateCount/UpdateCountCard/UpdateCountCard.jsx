@@ -1,9 +1,11 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const UpdateCountCard = ({ item }) => {
-  console.log(item);
-  const { _id, img, Count, price } = item;
+const UpdateCountCard = () => {
+  const Updatedata = useLoaderData();
+  // console.log(item);
+  const { _id, img, Count, price } = Updatedata;
   const handleUpdateToy = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -26,7 +28,7 @@ const UpdateCountCard = ({ item }) => {
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
-            text: "Toys Updated Successfully",
+            text: "Producted Updated Successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });
@@ -57,7 +59,7 @@ const UpdateCountCard = ({ item }) => {
 
         <input
           type="submit"
-          value="Update Toy"
+          value="Update Product"
           className="btn btn-block my-[20px]"
         />
       </form>

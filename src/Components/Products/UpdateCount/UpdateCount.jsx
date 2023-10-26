@@ -7,6 +7,7 @@ import UpdateCountCard from "./UpdateCountCard/UpdateCountCard";
 
 const UpdateCount = () => {
   const Updatedata = useLoaderData();
+  console.log(Updatedata);
   const [update, setupdate] = useState(Updatedata);
 
   //   console.log(Updatedata);

@@ -15,6 +15,8 @@ import Payment from "../Payment/Payment";
 import SingleCard from "../Products/Shop/SingleCard/SingleCard";
 import UpdateCount from "../Products/UpdateCount/UpdateCount";
 import FeatureProductCard from "../FeaturedProduct/featureProductCard";
+import UpdateCountCard from "../Products/UpdateCount/UpdateCountCard/UpdateCountCard";
+import WishListCard from "../WishList/WishListCard";
 
 const Routes = createBrowserRouter([
   {
@@ -70,6 +72,10 @@ const Routes = createBrowserRouter([
         element: <Payment />,
       },
       {
+        path: "Heart",
+        element: <WishListCard />,
+      },
+      {
         path: "addcard/:id",
         element: <SingleCard />,
         loader: ({ params }) =>
@@ -77,7 +83,7 @@ const Routes = createBrowserRouter([
       },
       {
         path: "updateCount/:id",
-        element: <UpdateCount />,
+        element: <UpdateCountCard />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/carts/${params.id}`),
       },

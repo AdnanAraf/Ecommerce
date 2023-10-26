@@ -3,8 +3,8 @@ import Categories from "../../Categories/Categories";
 
 const ExtraSection = () => {
   return (
-    <div className="bg-white w-[96%] h-[150px] mt-[50px] mx-[30px] container  rounded-lg">
-      <div className="grid grid-cols-4 pt-[50px] px-[80px]">
+    <div className="bg-white lg:w-[96%] lg:h-[150px] h-[250px] mt-[50px] lg:mx-[30px] container  rounded-lg overflow-hidden">
+      <div className="grid lg:grid-cols-4 grid-cols-2 pt-[30px] lg:pt-[50px] lg:px-[80px]">
         <div>
           <div className="flex">
             <svg
@@ -50,14 +50,16 @@ const ExtraSection = () => {
                 stroke-linecap="square"
               ></path>
             </svg>
-            <h1 className="text-[18px] font-bold  ml-[10px]">Free Shipping</h1>
+            <h1 className="lg:text-[18px] font-bold  lg:ml-[10px] ml-[5px]">
+              Free Shipping
+            </h1>
           </div>
           <p className="font-titleFont ml-[45px] mt-[-10px]">
             From all orders over 100$
           </p>
         </div>
 
-        <div>
+        <div className="">
           <div className="flex">
             <svg
               width="32"
@@ -80,7 +82,7 @@ const ExtraSection = () => {
                 stroke-linecap="square"
               ></path>
             </svg>
-            <h1 className="text-[18px] font-bold  ml-[10px]">
+            <h1 className="lg:text-[18px] font-bold  ml-[10px]">
               Daily Surprise Offers
             </h1>
           </div>
@@ -88,7 +90,7 @@ const ExtraSection = () => {
             Save up to 25% off
           </p>
         </div>
-        <div>
+        <div className="mt-[50px]">
           <div className="flex">
             <svg
               width="32"
@@ -131,7 +133,7 @@ const ExtraSection = () => {
               ></path>
             </svg>
 
-            <h1 className="text-[18px] font-bold  ml-[10px]">
+            <h1 className="lg:text-[18px] font-bold  lg:ml-[10px] ml-[5px]">
               Affortable Prices
             </h1>
           </div>
@@ -139,7 +141,7 @@ const ExtraSection = () => {
             Get Factory direct price
           </p>
         </div>
-        <div>
+        <div className="mt-[50px]">
           <div className="flex">
             <svg
               width="32"
@@ -170,11 +172,11 @@ const ExtraSection = () => {
                 stroke-linecap="square"
               ></path>
             </svg>
-            <h1 className="text-[18px] font-bold  ml-[10px]">
+            <h1 className="lg:text-[18px] font-bold  ml-[10px]">
               Secure Payments
             </h1>
           </div>
-          <p className="font-titleFont ml-[40px] mt-[-10px]">
+          <p className="font-titleFont ml-[40px] mt-[-10px]  ">
             100% protected payments
           </p>
         </div>
