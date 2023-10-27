@@ -40,32 +40,33 @@ const Navbar = () => {
               <span className="text-white">Kiddo</span>FunFinds
             </h1>
           </div>
-          <div className="dropdown dropdown-bottom dropdown-end lg:hidden   block mr-[110px] mt-[-5px]">
+          <div className="dropdown dropdown-bottom dropdown-end lg:hidden  block mr-[10px] mt-[-5px]">
             <label tabIndex={0} className=" m-1">
               <FaBars className="h-[30px] w-[15px] "></FaBars>
             </label>
             <ul
               tabIndex={0}
-              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 "
+              className="dropdown-content z-[1]   p-2  shadow bg-base-100 rounded-box w-52"
             >
               <li>
                 <Link
-                  className="p-[20px] font-bodyFont text-[16px] text-black"
+                  className="p-[20px] font-bodyFont text-[16px] text-black overflow-hidden "
                   to="/"
                 >
                   Home
                 </Link>
               </li>
+              <br></br>
               <li>
                 <Link
-                  className="p-[20px] font-bodyFont text-[16px] text-black"
+                  className="p-[20px] font-bodyFont text-[16px] text-black overflow-hidden "
                   to="Shop"
                 >
                   Shop
                 </Link>
               </li>
               {user?.email ? (
-                <div className="ml-[20px] ">
+                <div className="ml-[20px] overflow-hidden ">
                   <Link to="payment">
                     <div>
                       <h1 className=" text-center absolute  ml-[20px]    bg-green-300 h-[20px] w-[20px] rounded-full">

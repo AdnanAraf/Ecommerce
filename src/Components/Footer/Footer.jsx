@@ -56,10 +56,10 @@ const Footer = () => {
               </div>
             </div>
             <div className="leading-[30px] ">
-              <h1 className="text-white font-titleFont text-[30px] font-semibold ">
+              <h1 className="text-white font-titleFont text-[30px] font-semibold lg:mt-[] mt-[5px]">
                 Contact info{" "}
               </h1>
-              <p className="lg:text-[16px] text-white font-titleFont mt-[20px]">
+              <p className="lg:text-[16px] text-white font-titleFont mt-[5px]">
                 +73634982739{" "}
               </p>
               <p className="lg:text-[16px] text-white font-titleFont">

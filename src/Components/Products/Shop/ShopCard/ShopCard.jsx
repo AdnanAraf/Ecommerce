@@ -87,7 +87,7 @@ const ShopCard = ({ item, showModal }) => {
             </div>
           </Link>
           {isHovered && (
-            <div className="absolute right-0 bg-gray-200 h-[80px] w-[50px] bottom-[100px]">
+            <div className="absolute right-0 bg-gray-200 h-[80px] w-[50px] bottom-[100px] lg:block hidden">
               <label
                 className="cursor-pointer"
                 onClick={() =>

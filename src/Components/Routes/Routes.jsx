@@ -14,9 +14,10 @@ import Shop from "../Products/Shop/Shop";
 import Payment from "../Payment/Payment";
 import SingleCard from "../Products/Shop/SingleCard/SingleCard";
 import UpdateCount from "../Products/UpdateCount/UpdateCount";
-import FeatureProductCard from "../FeaturedProduct/featureProductCard";
+// import FeatureProductCard from "../FeaturedProduct/featureProductCard";
 import UpdateCountCard from "../Products/UpdateCount/UpdateCountCard/UpdateCountCard";
 import WishListCard from "../WishList/WishListCard";
+import FeatureProductCard from "../FeaturedProduct/FeatureProductCard";
 
 const Routes = createBrowserRouter([
   {
