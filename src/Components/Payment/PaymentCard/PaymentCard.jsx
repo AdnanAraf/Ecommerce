@@ -22,7 +22,7 @@ const PaymentCard = ({ item, index }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://toys-server-adnanaraf.vercel.app/carts/${_id}`, {
+        fetch(`http://localhost:5000/carts/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -30,7 +30,7 @@ const ShopCard = ({ item, showModal }) => {
         price,
         email: user?.email,
       };
-      fetch("https://toys-server-adnanaraf.vercel.app/WishCart", {
+      fetch("http://localhost:5000/WishCart", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -63,7 +63,7 @@ const ShopCard = ({ item, showModal }) => {
         <div className="relative ">
           <Link className="" to={`/addcard/${_id}`}>
             <div
-              className="h-[350px] w-[300px] bg-white shadow-2xl m-[20px] lg:m-[0px]  mx-auto  transition duration-200 transform hover:translate-y-2 "
+              className="h-[350px] mt-[150px] w-[300px] bg-white shadow-2xl m-[20px] lg:m-[0px]  mx-auto  transition duration-200 transform hover:translate-y-2 "
               data-aos="fade-right"
             >
               <img className="h-[200px] w-[200px] m-auto " src={img}></img>
@@ -99,7 +99,6 @@ const ShopCard = ({ item, showModal }) => {
                   onClick={() => showModal(_id)}
                 />
               </label>
-
               <FaHeart
                 onClick={() => wishList(item)}
                 className="mt-[20px] ml-[20px] cursor-pointer"

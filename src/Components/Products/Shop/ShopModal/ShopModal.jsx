@@ -30,9 +30,10 @@ const ShopModal = ({ showproduct }) => {
         image: showproduct.img,
         price: showproduct.price,
         email: user.email,
+        name: showproduct.name,
       };
 
-      fetch("https://toys-server-adnanaraf.vercel.app/carts", {
+      fetch("http://localhost:5000/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -44,12 +45,15 @@ const ShopModal = ({ showproduct }) => {
         .then((data) => {
           if (data.insertedId) {
             refetch();
-            Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: "Producted added on the cart.",
-              showConfirmButton: false,
-              timer: 1500,
+            toast("🦄 Product is added on the cart..!", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
             });
           }
         });

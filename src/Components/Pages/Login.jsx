@@ -41,7 +41,7 @@ const Login = () => {
       });
   };
   return (
-    <div className="flex bg-gray-400">
+    <div className="lg:flex bg-gray-400">
       <div className="form-container border-2 w-[400px] h-[400px] m-auto my-[100px]">
         <h2 className="text-center text-3xl font-bold my-10">Login</h2>
         <form onSubmit={handleLogin} className="text-center">
@@ -76,7 +76,7 @@ const Login = () => {
         </form>
         <p className="text-center mt-[20px] ">
           <small>
-            New to ToyMasterClass?
+            New to Ecommerce?
             <Link to="/register">Create New Account</Link>
           </small>
         </p>

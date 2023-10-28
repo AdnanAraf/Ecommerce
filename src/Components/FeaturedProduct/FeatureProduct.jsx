@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const FeatureProduct = () => {
   const [product, setproduct] = useState([]);
   useEffect(() => {
-    fetch("https://toys-server-adnanaraf.vercel.app/FeatureProduct")
+    fetch("http://localhost:5000/FeatureProduct")
       .then((res) => res.json())
       .then((data) => setproduct(data));
   }, []);

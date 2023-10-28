@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 const UpdateCountCard = () => {
@@ -26,11 +27,15 @@ const UpdateCountCard = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          Swal.fire({
-            title: "Success!",
-            text: "Producted Updated Successfully",
-            icon: "success",
-            confirmButtonText: "Cool",
+          toast("🦄 Product updated Successfully..!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
           });
         }
       });
@@ -62,6 +67,7 @@ const UpdateCountCard = () => {
           value="Update Product"
           className="btn btn-block my-[20px]"
         />
+        <ToastContainer />
       </form>
     </div>
   );

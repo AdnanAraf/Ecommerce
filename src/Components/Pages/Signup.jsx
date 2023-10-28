@@ -48,9 +48,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex">
-      <div className="lg:flex bg-blue-50">
-        <div className="form-container border-2 w-[400px] h-[600px] m-auto my-[50px] lg:mx-[200px]">
+    <div className="lg:flex overflow-hidden">
+      <div className="lg:flex bg-blue-50 overflow-hidden">
+        <div className="form-container border-2 w-[400px] h-[450px] m-auto my-[50px] lg:mx-[200px]">
           <h2 className="text-center text-3xl font-bold my-10">Sign Up</h2>
           <form onSubmit={handleRegister} className="text-center">
             {/*********************************NAME********************************************** */}
@@ -106,7 +106,7 @@ const Signup = () => {
           </form>
           <p className="text-center mt-[20px] ">
             <small>
-              New to ToyMasterClass?
+              New to Ecommerce?
               <Link to="/login">Already Have an Account</Link>
             </small>
           </p>

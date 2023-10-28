@@ -37,7 +37,7 @@ const Horizontal = ({ item }) => {
         email: user.email,
       };
 
-      fetch("https://toys-server-adnanaraf.vercel.app/carts", {
+      fetch("http://localhost:5000/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -77,7 +77,7 @@ const Horizontal = ({ item }) => {
         price,
         email: user?.email,
       };
-      fetch("https://toys-server-adnanaraf.vercel.app/WishCart", {
+      fetch("http://localhost:5000/WishCart", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -9,7 +9,7 @@ import { useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useContext } from "react";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 const FeatureProductCard = () => {
@@ -35,7 +35,7 @@ const FeatureProductCard = () => {
         email: user.email,
       };
 
-      fetch("https://toys-server-adnanaraf.vercel.app/carts", {
+      fetch("http://localhost:5000/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -47,12 +47,15 @@ const FeatureProductCard = () => {
         .then((data) => {
           if (data.insertedId) {
             refetch();
-            Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: "Product added on the cart.",
-              showConfirmButton: false,
-              timer: 1500,
+            toast("🦄 Product is added on the cart..!", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
             });
           }
         });
