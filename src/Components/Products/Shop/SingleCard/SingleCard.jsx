@@ -1,7 +1,7 @@
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { FaRegStar, FaStar } from "react-icons/fa";
+import { FaCheck, FaRegStar, FaStar } from "react-icons/fa";
 import ReactImageMagnify from "react-image-magnify";
 import Rating from "react-rating";
 import { useLoaderData, useParams } from "react-router-dom";
@@ -14,7 +14,10 @@ import Swal from "sweetalert2";
 
 const SingleCard = () => {
   const carddata = useLoaderData();
-  const { _id, name, description, img, rating, price } = carddata;
+  // console.log(carddata);
+  const [color, setcolor] = useState(carddata.color[0]);
+
+  const { _id, name, description, img, rating, price, availability } = carddata;
   const [count, setcount] = useState(1);
   const [, refetch] = useCart();
 
@@ -34,6 +37,7 @@ const SingleCard = () => {
         image: img,
         price: price,
         email: user.email,
+        color: color,
       };
 
       fetch("http://localhost:5000/carts", {
@@ -61,6 +65,19 @@ const SingleCard = () => {
           }
         });
     }
+  };
+
+  const disable = (showproduct) => {
+    toast("🦄 Product is out of stock..!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
 
   return (
@@ -126,14 +143,59 @@ const SingleCard = () => {
                   icon={faPlus}
                 />
               </div>
+              <div className=" mt-[20px]">
+                {carddata.color.map((colors, index) => {
+                  return (
+                    <button
+                      onClick={() => setcolor(colors)}
+                      className={
+                        color === colors ? "btnStyle active" : "btnStyle"
+                      }
+                      key={index}
+                      style={{ backgroundColor: colors }}
+                    >
+                      {color === colors ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="  text-white"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M4.5 12.75l6 6 9-13.5"
+                          />
+                        </svg>
+                      ) : null}
+                    </button>
+                  );
+                })}
+              </div>
               <div className=" text-center  mr-[320px] mt-[20px] lg:ml-[0px] ml-[100px]">
-                <button
-                  onClick={() => Handlecart(carddata)}
-                  className="h-[40px] w-[140px] bg-black text-white font-titleFont"
-                >
-                  Save Cart
-                  <ToastContainer />
-                </button>
+                {availability == "OutofStock" ? (
+                  <>
+                    <button
+                      onClick={() => disable(carddata)}
+                      className="h-[40px] w-[140px] bg-black text-white font-titleFont"
+                    >
+                      Save Cart
+                      <ToastContainer />
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button
+                      onClick={() => Handlecart(carddata)}
+                      className="h-[40px] w-[140px] bg-black text-white font-titleFont"
+                    >
+                      Save Cart
+                      <ToastContainer />
+                    </button>
+                  </>
+                )}
               </div>
             </div>
           </div>

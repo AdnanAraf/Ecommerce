@@ -7,7 +7,7 @@ import useCart from "../../hooks/useCart";
 import { Link } from "react-router-dom";
 
 const PaymentCard = ({ item, index }) => {
-  const { _id, image, email, price, Count } = item;
+  const { _id, image, email, price, Count, color } = item;
   const [booking, setbooking] = useState([]);
   const [, refetch] = useCart();
 
@@ -43,8 +43,13 @@ const PaymentCard = ({ item, index }) => {
   return (
     <tr>
       <td className="font-titleFont">{index + 1}</td>
-      <td className="font-titleFont">
+      <td className="font-titleFont flex">
         <img className="h-[50px] w-[50px] rounded-full" src={image}></img>
+        <p
+          src={color}
+          style={{ backgroundColor: color }}
+          className="btnStyle active opacity-1 h-[15px] w-[15px] mt-[20px]"
+        ></p>
       </td>
       <td className="font-titleFont">{email}</td>
 

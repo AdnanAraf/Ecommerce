@@ -4,6 +4,25 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&family=Inter:wght@600&family=Rancho&family=Work+Sans:wght@500&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&family=IBM+Plex+Sans:wght@600&family=Inter:wght@600&family=Rancho&family=Work+Sans:wght@500&display=swap");
+
+.btnStyle {
+  width: 2rem;
+  height: 2rem;
+  background-color: black;
+  border-radius: 50%;
+  margin-left: 1rem;
+  border: none;
+  outline: none;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.btnStyle:hover {
+  opacity: 1;
+}
+.active {
+  opacity: 1;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

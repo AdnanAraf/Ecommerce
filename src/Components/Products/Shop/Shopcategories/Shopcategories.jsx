@@ -1,7 +1,6 @@
 import React from "react";
-
 import Shopcategory from "../shopcategory/Shopcategory";
-import { categories } from "../../../Categories/categoriesdata";
+import { categories } from "../../../Categories/Categoriesdata";
 
 const Shopcategories = () => {
   return (

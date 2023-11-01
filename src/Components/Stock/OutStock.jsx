@@ -2,14 +2,13 @@ import React, { useContext } from "react";
 import { useState } from "react";
 import { FaEye, FaHeart, FaRegEye, FaRegStar, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../Provider/AuthProvider";
 
-import useWish from "../../../hooks/useWish";
 import { ToastContainer, toast } from "react-toastify";
 import Rating from "react-rating";
-import { ColorRing } from "react-loader-spinner";
+import { AuthContext } from "../Provider/AuthProvider";
+import useWish from "../hooks/useWish";
 
-const ShopCard = ({ item, showModal }) => {
+const OutStock = ({ item, showModal }) => {
   const { _id, img, title, price, rating, name } = item;
   const [isHovered, setIsHovered] = useState(false);
   const { user } = useContext(AuthContext);
@@ -20,7 +19,6 @@ const ShopCard = ({ item, showModal }) => {
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
-
   const wishList = (product) => {
     if (user && user?.email) {
       const productitem = {
@@ -56,7 +54,6 @@ const ShopCard = ({ item, showModal }) => {
         });
     }
   };
-
   return (
     <div>
       <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -87,7 +84,7 @@ const ShopCard = ({ item, showModal }) => {
             </div>
           </Link>
           {isHovered && (
-            <div className="absolute right-[50px] bg-gray-200 h-[80px] w-[50px] m  bottom-[100px] lg:block hidden">
+            <div className="absolute right-[55px] bg-gray-200 h-[80px] w-[50px] bottom-[100px] lg:block hidden">
               <label
                 className="cursor-pointer"
                 onClick={() =>
@@ -95,8 +92,9 @@ const ShopCard = ({ item, showModal }) => {
                 }
               >
                 <FaRegEye
-                  className="ml-[20px] mt-[20px]"
+                  className="ml-[20px] mt-[20px] disabled:opacity-50 disabled:cursor-not-allowed"
                   onClick={() => showModal(_id)}
+                  disabled
                 />
               </label>
               <FaHeart
@@ -112,4 +110,4 @@ const ShopCard = ({ item, showModal }) => {
   );
 };
 
-export default ShopCard;
+export default OutStock;

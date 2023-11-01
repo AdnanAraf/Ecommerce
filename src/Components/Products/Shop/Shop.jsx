@@ -95,10 +95,8 @@ const Shop = () => {
           >
             Search
           </button> */}
-          <div className=" absolute  lg:top-[670px] top-[550px]  lg:left-[1200px]  ">
-            {/* <button onClick={() => setAsc(!asc)}>
-            {asc ? "Price: Low to High" : "Price: High to Low"}
-          </button> */}
+          {/* <div className=" absolute  lg:top-[670px] top-[550px]  lg:left-[1200px]  ">
+       
             <select
               className=" select  bg-gray-100 font-titleFont text-[16px]"
               onChange={handleSortChange}
@@ -109,32 +107,8 @@ const Shop = () => {
                 Price: High To Low
               </option>
             </select>
-          </div>
-        </div>
-        <div className="flex gap-[30px] absolute lg:ml-[480px]  ml-[260px] lg:mt-[70px] mt-[120px]">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              onClick={horizontal}
-              className="h-[30px] w-[30px] lg:ml-[600px] mt-[-5px] "
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-              />
-            </svg>
-          </div>
-          <div>
-            <FaGripVertical
-              onClick={Vertical}
-              className="h-[25px] w-[25px] lg:block hidden"
-            ></FaGripVertical>
-          </div>
+          </div> */}
+          <div></div>
         </div>
 
         <Showproduct />

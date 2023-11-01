@@ -2,14 +2,13 @@ import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from "react";
 import { useState } from "react";
-import { AuthContext } from "../../../Provider/AuthProvider";
+import { AuthContext } from "../Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
-import useCart from "../../../hooks/useCart";
+import useCart from "../hooks/useCart";
 
-const ShopModal = ({ showproduct }) => {
-  // console.log(showproduct);
+const Outstockmodal = ({ showproduct }) => {
   const [count, setcount] = useState(1);
   const [, refetch] = useCart();
 
@@ -58,21 +57,6 @@ const ShopModal = ({ showproduct }) => {
             });
           }
         });
-    }
-  };
-
-  const disable = (showproduct) => {
-    if (user && user.email) {
-      toast("🦄 Product is out of stock..!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
     }
   };
   return (
@@ -129,31 +113,16 @@ const ShopModal = ({ showproduct }) => {
                   icon={faPlus}
                 />
               </div>
-              {showproduct.availability == "OutofStock" ? (
-                <>
-                  <div className="mt-[30px] text-center ">
-                    <button
-                      onClick={() => disable(showproduct)}
-                      className="h-[40px] w-[140px]   bg-black text-white font-titleFont"
-                    >
-                      Save Cart
-                      <ToastContainer />
-                    </button>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="mt-[30px] text-center ">
-                    <button
-                      onClick={() => Handlecart(showproduct)}
-                      className="h-[40px] w-[140px] bg-black text-white font-titleFont"
-                    >
-                      Save Cart
-                      <ToastContainer />
-                    </button>
-                  </div>
-                </>
-              )}
+              <div className="mt-[30px] text-center ">
+                <button
+                  onClick={() => Handlecart(showproduct)}
+                  className="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled
+                >
+                  Disable Button
+                  <ToastContainer />
+                </button>
+              </div>
             </div>
           </div>
         </dialog>
@@ -162,4 +131,4 @@ const ShopModal = ({ showproduct }) => {
   );
 };
 
-export default ShopModal;
+export default Outstockmodal;
