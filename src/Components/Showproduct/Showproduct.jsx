@@ -34,15 +34,30 @@ const Showproduct = () => {
       .then((data) => {
         if (category) {
           const filtered = data.filter((room) => room.category === category);
-
           setbooks(filtered);
-          setbooks(data);
+          setinstock(data);
+
           setbook(false);
           setselect1(true);
           setselect(false);
           setoutselect(false);
         } else {
+          const instock = data.filter(
+            (item) => item.availability === "In stock"
+          );
+          const outstock = data.filter(
+            (item) => item.availability === "OutofStock"
+          );
+          if (cnt > 0) {
+            setoutstock(outstock);
+            // cnt1 = 0;
+          }
+          if (cnt1 > 0) {
+            setinstock(instock);
+            // cnt = 0;
+          }
           setbooks(data);
+          // console.log(outstock);
         }
 
         setLoading(false);
@@ -57,7 +72,7 @@ const Showproduct = () => {
   };
   const InStock = () => {
     // console.log("araf");
-    fetch("http://localhost:5000/AllProduct")
+    fetch(`http://localhost:5000/AllProduct?sort=${asc ? "asc" : "desc"}`)
       .then((res) => res.json())
       .then((data) => {
         const result = data.filter((item) => item.availability == "In stock");
@@ -66,12 +81,7 @@ const Showproduct = () => {
         setselect(true);
         setselect1(false);
         setoutselect(false);
-        // cnt++;
-        // if (cnt % 2 == 0) {
-        //   setselect(false);
-        //   setselect1(true);
-        //   setoutselect(false);
-        // }
+        cnt1++;
       });
   };
 
@@ -81,21 +91,16 @@ const Showproduct = () => {
   };
 
   const OutofStock = () => {
-    fetch("http://localhost:5000/AllProduct")
+    fetch(`http://localhost:5000/AllProduct?sort=${asc ? "asc" : "desc"}`)
       .then((res) => res.json())
       .then((data) => {
         const result = data.filter((item) => item.availability == "OutofStock");
-        console.log(result);
+
         setoutstock(result);
         setselect(false);
         setselect1(false);
         setoutselect(true);
-        // cnt1++;
-        // if (cnt1 % 2 == 0) {
-        //   setoutselect(false);
-        //   setselect1(true);
-        //   setselect(false);
-        // }
+        cnt++;
       });
   };
   const horizontal = () => {
@@ -104,9 +109,6 @@ const Showproduct = () => {
   const Vertical = () => {
     setgrid(false);
   };
-  // const handleSortChange = (event) => {
-  //   console.log("araf");
-  // };
 
   return (
     <div className="">
