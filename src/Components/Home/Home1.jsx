@@ -9,11 +9,11 @@ import Differentlogo from "../Differentlogo/Differentlogo";
 const Home1 = () => {
   return (
     <div>
-      {/* <Slider /> */}
+      <Slider />
       {/* <Gallery /> */}
-      {/* <ExtraSection />
+      <ExtraSection />
       <FeatureProduct />
-      <Differentlogo /> */}
+      <Differentlogo />
     </div>
   );
 };
