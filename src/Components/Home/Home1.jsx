@@ -5,6 +5,7 @@ import Slider from "../Navbar/Background/Slider";
 // import Categories from "../Categories/Categories";
 import FeatureProduct from "../FeaturedProduct/FeatureProduct";
 import Differentlogo from "../Differentlogo/Differentlogo";
+import PopularProduct from "../Products/PopularProduct/PopularProduct";
 
 const Home1 = () => {
   return (
@@ -13,6 +14,7 @@ const Home1 = () => {
       {/* <Gallery /> */}
       <ExtraSection />
       <FeatureProduct />
+      <PopularProduct />
       <Differentlogo />
     </div>
   );

@@ -90,7 +90,7 @@ const ExtraSection = () => {
             Save up to 25% off
           </p>
         </div>
-        <div className="mt-[50px]">
+        <div className="">
           <div className="flex">
             <svg
               width="32"
@@ -141,7 +141,7 @@ const ExtraSection = () => {
             Get Factory direct price
           </p>
         </div>
-        <div className="mt-[50px]">
+        <div className="">
           <div className="flex">
             <svg
               width="32"

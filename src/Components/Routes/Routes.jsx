@@ -78,7 +78,11 @@ const Routes = createBrowserRouter([
       },
       {
         path: "updateCount/:id",
-        element: <UpdateCountCard />,
+        element: (
+          <PrivateRoute>
+            <UpdateCountCard />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/carts/${params.id}`),
       },
