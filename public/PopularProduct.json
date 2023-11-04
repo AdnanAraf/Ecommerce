@@ -4,41 +4,47 @@
     "image": "https://i.ibb.co/HDF60x7/camera-photographic-equipment-lens-technology-generative-ai-188544-19482.jpg",
     "brand": "Sony",
     "review": 5,
-    "description": "https://i.ibb.co/5n8Qk1S/Screenshot-31.png"
+    "description": "https://i.ibb.co/5n8Qk1S/Screenshot-31.png",
+    "price": 80
   },
   {
     "name": "Sony Blue Smart Watch, 60gm, Model Name/Number: 0078",
     "image": "https://i.ibb.co/MP5QGTL/men-s-mechanical-watch-dark-background-488220-26725.jpg",
     "brand": "Sony",
     "review": 5,
-    "description": "https://i.ibb.co/Fs01mKk/Screenshot-32.png"
+    "description": "https://i.ibb.co/Fs01mKk/Screenshot-32.png",
+    "price": 140
   },
   {
     "name": "Apple Watch Series 8",
     "image": "https://i.ibb.co/Kjx781N/apple-watch-series-8-review-main-one-one.jpg",
     "brand": "Apple",
     "review": 5,
-    "description": "https://i.ibb.co/ngJ1RPQ/Screenshot-33.png"
+    "description": "https://i.ibb.co/ngJ1RPQ/Screenshot-33.png",
+    "price": 100
   },
   {
     "name": "PHILIPS A4216 Wireless Sports Headphones, up to 35 Hours Play time, Washable Cooling Ear-Cup Cushions, IP55 Water/dust Protection, Bluetooth + 3.5 mm Audio Port, Built-in",
     "image": "https://i.ibb.co/Jk2bY0G/wireless-headphone-mockup-69509-4107.jpg",
     "brand": "PHILIPS",
     "review": 5,
-    "description": "https://i.ibb.co/HrjyxBr/Screenshot-34.png"
+    "description": "https://i.ibb.co/HrjyxBr/Screenshot-34.png",
+    "price": 120
   },
   {
     "name": " 32 (T4400) Smart HD TV",
     "image": "https://i.ibb.co/0XhDbFK/technology-meets-nature-wide-landscape-view-generative-ai-188544-12133.jpg",
     "brand": "Samsung",
     "review": 5,
-    "description": "https://i.ibb.co/S58Sj1Z/Screenshot-36.png"
+    "description": "https://i.ibb.co/S58Sj1Z/Screenshot-36.png",
+    "price": 60
   },
   {
     "name": "Sony a7 III 24.2MP Mirrorless Camera with FE 28-70mm F/3.5-5.6 OSS Lens",
     "image": "https://i.ibb.co/HDF60x7/camera-photographic-equipment-lens-technology-generative-ai-188544-19482.jpg",
     "brand": "Sony",
     "review": 5,
-    "description": "https://i.ibb.co/5n8Qk1S/Screenshot-31.png"
+    "description": "https://i.ibb.co/5n8Qk1S/Screenshot-31.png",
+    "price": 100
   }
 ]

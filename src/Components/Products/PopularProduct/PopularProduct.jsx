@@ -5,13 +5,15 @@ import { Pagination, Navigation } from "swiper/modules";
 import { FaAngleLeft, FaAngleRight, FaRegStar, FaStar } from "react-icons/fa";
 import "./style.css";
 import Rating from "react-rating";
+import PopularModal from "./PopularModal";
 
 const PopularProduct = () => {
   const swiperRef = useRef(null);
   const [popularproduct, setpopularproduct] = useState([]);
+  const [populardata, setpopulardata] = useState([]);
 
   useEffect(() => {
-    fetch("PopularProduct.json")
+    fetch("http://localhost:5000/PopularProduct")
       .then((res) => res.json())
       .then((data) => setpopularproduct(data));
   }, []);
@@ -38,10 +40,19 @@ const PopularProduct = () => {
     }
   };
 
+  const showModal = (_id) => {
+    fetch(`http://localhost:5000/PopularProduct/${_id}`)
+      .then((res) => res.json())
+      .then((data) => setpopulardata(data));
+  };
+
   return (
-    <div className="mt-[100px]  overflow-hidden">
+    <div className="mt-[120px]  overflow-hidden">
+      <h1 className="font-titleFont text-[35px] ml-[35px] font-semibold">
+        Popular Product
+      </h1>
       <div>
-        <div className="flex justify-end">
+        <div className="flex justify-end mr-[20px]">
           <div className="prev text-[25px]" onClick={goToPrevSlide}>
             <FaAngleLeft />
           </div>
@@ -52,11 +63,11 @@ const PopularProduct = () => {
         <div className="">
           <div>
             <img
-              className="h-[600px] w-[300px]"
+              className="h-[600px] w-[300px] ml-[30px]"
               src="https://i.ibb.co/C1TYHTD/super-sale-offer-banner-with-editable-text-template-3d-render-47987-12746.jpg"
             ></img>
           </div>
-          <div className="mt-[-600px] ml-[400px]">
+          <div className="mt-[-600px] ml-[350px]">
             <Swiper
               className="myswiper h-[200px] w-[200px]"
               // navigation={true}
@@ -67,7 +78,7 @@ const PopularProduct = () => {
             >
               <div>
                 {popularproduct.map((item) => (
-                  <SwiperSlide>
+                  <SwiperSlide className="relative">
                     <img
                       className="w-full h-[300px] mt-[100px]"
                       src={item.image}
@@ -92,6 +103,20 @@ const PopularProduct = () => {
                         fullSymbol={<FaStar />}
                       />
                     </div>
+                    <div className="absolute bottom-[30px] left-[100px]">
+                      <label
+                        onClick={() =>
+                          document.getElementById("my_modal_3").showModal()
+                        }
+                      >
+                        <button
+                          className="btn btn-success font-titleFont"
+                          onClick={() => showModal(item._id)}
+                        >
+                          Details
+                        </button>
+                      </label>
+                    </div>
                   </SwiperSlide>
                 ))}
               </div>
@@ -99,6 +124,7 @@ const PopularProduct = () => {
           </div>
         </div>
       </div>
+      <PopularModal populardata={populardata} />
     </div>
   );
 };
