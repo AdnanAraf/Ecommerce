@@ -17,7 +17,8 @@ import UpdateCountCard from "../Products/UpdateCount/UpdateCountCard/UpdateCount
 import WishListCard from "../WishList/WishListCard";
 import FeatureProductCard from "../FeaturedProduct/FeatureProductCard";
 import PrivateRoute from "../Private/PrivateRoute";
-import Blog from "../Blog/Blog";
+
+import Blogcard from "../Blog/Blogcard";
 
 const Routes = createBrowserRouter([
   {
@@ -99,7 +100,7 @@ const Routes = createBrowserRouter([
       },
       {
         path: "blog",
-        element: <Blog />,
+        element: <Blogcard />,
       },
     ],
   },
