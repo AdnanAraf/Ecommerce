@@ -47,10 +47,16 @@ const PopularProduct = () => {
   };
 
   return (
-    <div className="mt-[120px]  overflow-hidden">
-      <h1 className="font-titleFont text-[35px] ml-[35px] font-semibold">
-        Popular Product
-      </h1>
+    <div className="mt-[50px]  overflow-hidden">
+      <div className="flex gap-[20px]">
+        <h1 className="font-titleFont text-[35px] ml-[35px] font-semibold">
+          Popular Product
+        </h1>
+        <img
+          className="h-[80px] w-[100px] mt-[-0px]"
+          src="https://i.ibb.co/xDsTWSy/emoji-hey-600-M9-RRgzt-removebg-preview.png"
+        ></img>
+      </div>
       <div>
         <div className="flex justify-end mr-[20px]">
           <div className="prev text-[25px]" onClick={goToPrevSlide}>
@@ -89,7 +95,7 @@ const PopularProduct = () => {
                     <p className="font-titleFont font-bold text-yellow-800 pt-[20px] pl-[10px]">
                       {item.brand}
                     </p>
-                    <div className="flex gap-[30px] pt-[20px] pl-[10px]">
+                    <div className="flex gap-[10px] pt-[20px] pl-[10px]">
                       <p className="font-titleFont font-semibold">
                         {" "}
                         Rating: {item.review}

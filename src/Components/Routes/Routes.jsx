@@ -17,6 +17,7 @@ import UpdateCountCard from "../Products/UpdateCount/UpdateCountCard/UpdateCount
 import WishListCard from "../WishList/WishListCard";
 import FeatureProductCard from "../FeaturedProduct/FeatureProductCard";
 import PrivateRoute from "../Private/PrivateRoute";
+import Blog from "../Blog/Blog";
 
 const Routes = createBrowserRouter([
   {
@@ -95,6 +96,10 @@ const Routes = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/FeatureProduct/${params.id}`),
+      },
+      {
+        path: "blog",
+        element: <Blog />,
       },
     ],
   },

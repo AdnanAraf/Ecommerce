@@ -11,9 +11,11 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
-
+// import Review from "../../../Review/Review";
+let cnt = 0;
 const SingleCard = () => {
   const carddata = useLoaderData();
+
   // console.log(carddata);
   const [color, setcolor] = useState(carddata.color[0]);
 
@@ -201,6 +203,7 @@ const SingleCard = () => {
           </div>
         </div>
       </div>
+      <div></div>
     </div>
   );
 };
