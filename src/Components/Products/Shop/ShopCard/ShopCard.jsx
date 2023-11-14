@@ -30,7 +30,7 @@ const ShopCard = ({ item, showModal }) => {
         price,
         email: user?.email,
       };
-      fetch("http://localhost:5000/WishCart", {
+      fetch("https://toys-server-teal.vercel.app/WishCart", {
         method: "POST",
         headers: {
           "content-type": "application/json",

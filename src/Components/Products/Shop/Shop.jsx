@@ -19,12 +19,16 @@ const Shop = () => {
   const [showproduct, setshowproduct] = useState({});
   const [fourColumn, setgrid] = useState(true);
   useEffect(() => {
-    fetch(`http://localhost:5000/AllProduct?sort=${asc ? "asc" : "desc"}`)
+    fetch(
+      `https://toys-server-teal.vercel.app/AllProduct?sort=${
+        asc ? "asc" : "desc"
+      }`
+    )
       .then((res) => res.json())
       .then((data) => setproduct(data));
   }, [asc]);
   //   useEffect(() => {
-  //     fetch(`http://localhost:5000/AllProduct?sort=${asc ? "asc" : "desc"}`)
+  //     fetch(`https://toys-server-teal.vercel.app/AllProduct?sort=${asc ? "asc" : "desc"}`)
   //       .then((res) => res.json())
   //       .then((data) => {
   //         setcategory(data);
@@ -32,7 +36,7 @@ const Shop = () => {
   //   }, [asc]);
 
   const showModal = (id) => {
-    fetch(`http://localhost:5000/AllProduct/${id}`)
+    fetch(`https://toys-server-teal.vercel.app/AllProduct/${id}`)
       .then((res) => res.json())
       .then((data) => setshowproduct(data));
   };
@@ -50,7 +54,7 @@ const Shop = () => {
   };
   // const handleSearch = () => {
   //   fetch(
-  //     `http://localhost:5000/getJobsByText/${searchText}`
+  //     `https://toys-server-teal.vercel.app/getJobsByText/${searchText}`
   //   )
   //     .then((res) => res.json())
   //     .then((data) => {

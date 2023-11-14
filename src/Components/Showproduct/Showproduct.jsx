@@ -29,7 +29,11 @@ const Showproduct = () => {
   const [select2, setselect2] = useState(true);
   const [fourColumn, setgrid] = useState(true);
   useEffect(() => {
-    fetch(`http://localhost:5000/AllProduct?sort=${asc ? "asc" : "desc"}`)
+    fetch(
+      `https://toys-server-teal.vercel.app/AllProduct?sort=${
+        asc ? "asc" : "desc"
+      }`
+    )
       .then((res) => res.json())
       .then((data) => {
         if (category) {
@@ -66,13 +70,17 @@ const Showproduct = () => {
   }, [category, asc]);
 
   const showModal = (id) => {
-    fetch(`http://localhost:5000/AllProduct/${id}`)
+    fetch(`https://toys-server-teal.vercel.app/AllProduct/${id}`)
       .then((res) => res.json())
       .then((data) => setshowproduct(data));
   };
   const InStock = () => {
     // console.log("araf");
-    fetch(`http://localhost:5000/AllProduct?sort=${asc ? "asc" : "desc"}`)
+    fetch(
+      `https://toys-server-teal.vercel.app/AllProduct?sort=${
+        asc ? "asc" : "desc"
+      }`
+    )
       .then((res) => res.json())
       .then((data) => {
         const result = data.filter((item) => item.availability == "In stock");
@@ -91,7 +99,11 @@ const Showproduct = () => {
   };
 
   const OutofStock = () => {
-    fetch(`http://localhost:5000/AllProduct?sort=${asc ? "asc" : "desc"}`)
+    fetch(
+      `https://toys-server-teal.vercel.app/AllProduct?sort=${
+        asc ? "asc" : "desc"
+      }`
+    )
       .then((res) => res.json())
       .then((data) => {
         const result = data.filter((item) => item.availability == "OutofStock");

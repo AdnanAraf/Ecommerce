@@ -19,6 +19,7 @@ import FeatureProductCard from "../FeaturedProduct/FeatureProductCard";
 import PrivateRoute from "../Private/PrivateRoute";
 
 import Blogcard from "../Blog/Blogcard";
+import Contract from "../Contract/Contract";
 
 const Routes = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const Routes = createBrowserRouter([
         path: "register",
         element: <Signup />,
       },
+      {
+        path: "contract",
+        element: <Contract />,
+      },
       // {
       //   path: "/details/:_id",
       //   element: (
@@ -46,7 +51,7 @@ const Routes = createBrowserRouter([
       //   ),
       //   loader: ({ params }) =>
       //     fetch(
-      //       `http://localhost:5000/CategoriesCollection/${params.id}`
+      //       `https://toys-server-teal.vercel.app/CategoriesCollection/${params.id}`
       //     ),
       // },
 
@@ -54,7 +59,7 @@ const Routes = createBrowserRouter([
         path: "update/:id",
         element: <UpdateProduct />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/ToysData/${params.id}`),
+          fetch(`https://toys-server-teal.vercel.app/ToysData/${params.id}`),
       },
       {
         path: "Shop",
@@ -76,7 +81,7 @@ const Routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/AllProduct/${params.id}`),
+          fetch(`https://toys-server-teal.vercel.app/AllProduct/${params.id}`),
       },
       {
         path: "updateCount/:id",
@@ -86,7 +91,7 @@ const Routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/carts/${params.id}`),
+          fetch(`https://toys-server-teal.vercel.app/carts/${params.id}`),
       },
       {
         path: "detailscart/:id",
@@ -96,7 +101,9 @@ const Routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/FeatureProduct/${params.id}`),
+          fetch(
+            `https://toys-server-teal.vercel.app/FeatureProduct/${params.id}`
+          ),
       },
       {
         path: "blog",

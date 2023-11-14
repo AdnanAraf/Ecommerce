@@ -13,7 +13,7 @@ const PopularProduct = () => {
   const [populardata, setpopulardata] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/PopularProduct")
+    fetch("https://toys-server-teal.vercel.app/PopularProduct")
       .then((res) => res.json())
       .then((data) => setpopularproduct(data));
   }, []);
@@ -41,7 +41,7 @@ const PopularProduct = () => {
   };
 
   const showModal = (_id) => {
-    fetch(`http://localhost:5000/PopularProduct/${_id}`)
+    fetch(`https://toys-server-teal.vercel.app/PopularProduct/${_id}`)
       .then((res) => res.json())
       .then((data) => setpopulardata(data));
   };

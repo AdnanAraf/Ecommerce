@@ -13,7 +13,7 @@ const Navbar = () => {
   const [open, setopen] = useState();
   const [cart] = useCart();
   const [Wish] = useWish();
-  console.log(Wish);
+  // console.log(Wish);
   const handleLogOut = () => {
     logOut()
       .then(() => {})

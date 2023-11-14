@@ -11,6 +11,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
+import Review from "../../../Review/Review";
 // import Review from "../../../Review/Review";
 let cnt = 0;
 const SingleCard = () => {
@@ -42,7 +43,7 @@ const SingleCard = () => {
         color: color,
       };
 
-      fetch("http://localhost:5000/carts", {
+      fetch("https://toys-server-teal.vercel.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -203,7 +204,9 @@ const SingleCard = () => {
           </div>
         </div>
       </div>
-      <div></div>
+      <div>
+        <Review />
+      </div>
     </div>
   );
 };

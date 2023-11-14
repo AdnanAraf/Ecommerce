@@ -21,7 +21,7 @@ const WishListCardDetails = ({ item, index }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/WishCart/${_id}`, {
+        fetch(`https://toys-server-teal.vercel.app/WishCart/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

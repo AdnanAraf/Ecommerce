@@ -16,7 +16,7 @@ const UpdateCountCard = () => {
     };
     console.log(updatedToys);
     // send data to the server
-    fetch(`http://localhost:5000/carts/${_id}`, {
+    fetch(`https://toys-server-teal.vercel.app/carts/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

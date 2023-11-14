@@ -37,7 +37,7 @@ const Horizontal = ({ item }) => {
         email: user.email,
       };
 
-      fetch("http://localhost:5000/carts", {
+      fetch("https://toys-server-teal.vercel.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -77,7 +77,7 @@ const Horizontal = ({ item }) => {
         price,
         email: user?.email,
       };
-      fetch("http://localhost:5000/WishCart", {
+      fetch("https://toys-server-teal.vercel.app/WishCart", {
         method: "POST",
         headers: {
           "content-type": "application/json",
