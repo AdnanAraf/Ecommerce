@@ -12,8 +12,8 @@ const Payment = () => {
     (accumulator, item) => accumulator + parseFloat(item.price) * item.Count,
     0
   );
-  console.log("The sum is: " + sum);
-  console.log(cart);
+  // console.log("The sum is: " + sum);
+  // console.log(cart);
 
   return (
     <div>

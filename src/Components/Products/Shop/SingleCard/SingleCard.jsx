@@ -1,6 +1,6 @@
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect } from "react";
 import { FaCheck, FaRegStar, FaStar } from "react-icons/fa";
 import ReactImageMagnify from "react-image-magnify";
 import Rating from "react-rating";
@@ -12,12 +12,16 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 import Review from "../../../Review/Review";
+import useReview from "../../../hooks/useReview";
+import Messenger from "../../../Messenger/Messenger";
 // import Review from "../../../Review/Review";
 let cnt = 0;
 const SingleCard = () => {
   const carddata = useLoaderData();
-
+  const [reviews, loading] = useReview();
+  const [review, setReview] = useState([]);
   // console.log(carddata);
+  const [sum, setsum] = useState(0);
   const [color, setcolor] = useState(carddata.color[0]);
 
   const { _id, name, description, img, rating, price, availability } = carddata;
@@ -83,6 +87,20 @@ const SingleCard = () => {
     });
   };
 
+  useEffect(() => {
+    const product = reviews.filter(
+      (item) => item.ReviewitemID === carddata._id
+    );
+    const sum = product.reduce(
+      (accumulator, item) => accumulator + parseFloat(item.star),
+      0
+    );
+    setsum(sum / product.length);
+
+    console.log(product);
+    setReview(product);
+  }, [loading, reviews, carddata._id]);
+
   return (
     <div className="overflow-hidden">
       <div className="flex justify-between overflow-hidden">
@@ -109,8 +127,20 @@ const SingleCard = () => {
           <div className="mr-[250px] mt-[60px]">
             <h1 className="lg:text-[30px] text-[20px] w-[350px] lg:w-[500px] lg:ml-[0px] ml-[20px] font-titleFont font-semibold">
               {name}
-            </h1>
-            <p className="font-titleFont lg:w-[500px] w-[300px] lg:ml-[0px] ml-[20px] lg:mt-[0px] mt-[20px] text-[14px]">
+            </h1>{" "}
+            <span className="font-titleFont font-bold text-[18px]">
+              Reviews:{review.length}
+            </span>
+            {/* <span className="font-titleFont font-bold text-[18px]">{sum}</span> */}
+            <Rating
+              className="text-orange-600 mt-[10px] ml-[15px] text-[20px] "
+              placeholderRating={sum}
+              emptySymbol={<FaRegStar />}
+              readonly
+              placeholderSymbol={<FaStar />}
+              fullSymbol={<FaStar />}
+            />
+            <p className="font-titleFont lg:w-[500px] w-[300px] lg:ml-[0px] ml-[20px] lg:mt-[30px] mt-[20px] text-[14px]">
               {description}
             </p>
             <div className="flex lg:ml-[0px]  ml-[100px]">
@@ -205,6 +235,7 @@ const SingleCard = () => {
         </div>
       </div>
       <div>
+        <Messenger />
         <Review />
       </div>
     </div>

@@ -11,6 +11,7 @@ const PopularProduct = () => {
   const swiperRef = useRef(null);
   const [popularproduct, setpopularproduct] = useState([]);
   const [populardata, setpopulardata] = useState([]);
+  const [slidesPerView, setSlidesPerView] = useState(calculateSlidesPerView);
 
   useEffect(() => {
     fetch("https://toys-server-teal.vercel.app/PopularProduct")
@@ -20,11 +21,26 @@ const PopularProduct = () => {
 
   useEffect(() => {
     if (swiperRef.current) {
-      // Initialize the Swiper instance
       const swiper = swiperRef.current.swiper;
-      swiper.update(); // Call the update method on the initialized Swiper instance
+      swiper.update();
     }
+  }, [slidesPerView]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesPerView(calculateSlidesPerView());
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  function calculateSlidesPerView() {
+    return window.innerWidth >= 500 ? 3 : 1;
+  }
 
   const goToNextSlide = () => {
     if (swiperRef.current) {
@@ -52,13 +68,15 @@ const PopularProduct = () => {
         <h1 className="font-titleFont text-[35px] ml-[35px] font-semibold">
           Popular Product
         </h1>
-        <img
-          className="h-[80px] w-[100px] mt-[-0px]"
-          src="https://i.ibb.co/xDsTWSy/emoji-hey-600-M9-RRgzt-removebg-preview.png"
-        ></img>
       </div>
       <div>
-        <div className="flex justify-end mr-[20px]">
+        <div className="lg:hidden block mt-[50px]">
+          <img
+            className="h-[600px] w-[300px] ml-[30px]"
+            src="https://i.ibb.co/C1TYHTD/super-sale-offer-banner-with-editable-text-template-3d-render-47987-12746.jpg"
+          ></img>
+        </div>
+        <div className="flex justify-end mr-[20px] lg:mt-[0px] mt-[50px]">
           <div className="prev text-[25px]" onClick={goToPrevSlide}>
             <FaAngleLeft />
           </div>
@@ -66,23 +84,28 @@ const PopularProduct = () => {
             <FaAngleRight />
           </div>
         </div>
-        <div className="">
-          <div>
+        <div className="mt-[50px]">
+          <div className="lg:block hidden">
             <img
               className="h-[600px] w-[300px] ml-[30px]"
               src="https://i.ibb.co/C1TYHTD/super-sale-offer-banner-with-editable-text-template-3d-render-47987-12746.jpg"
             ></img>
           </div>
-          <div className="mt-[-600px] ml-[350px]">
+          <div className="lg:mt-[-600px] lg:ml-[350px]">
             <Swiper
               className="myswiper h-[200px] w-[200px]"
               // navigation={true}
-              slidesPerView={3}
+              // slidesPerView={3}
+              // spaceBetween={60}
+              // modules={[Pagination, Navigation]}
+              // ref={swiperRef}
+
+              slidesPerView={slidesPerView}
               spaceBetween={60}
               modules={[Pagination, Navigation]}
               ref={swiperRef}
             >
-              <div>
+              <div className="">
                 {popularproduct.map((item) => (
                   <SwiperSlide className="relative">
                     <img
