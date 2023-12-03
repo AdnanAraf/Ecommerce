@@ -16,7 +16,7 @@ const useReview = () => {
     queryKey: ["review", carddata._id], // Include the product ID in the dependency array
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/review?productId=${carddata._id}`
+        `https://toys-server-teal.vercel.app/review?productId=${carddata._id}`
       );
       return res.json();
     },

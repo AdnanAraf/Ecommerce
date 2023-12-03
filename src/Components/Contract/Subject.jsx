@@ -32,30 +32,30 @@ const Subject = () => {
   return (
     <div>
       <form ref={form} onSubmit={sendEmail}>
-        <div>
+        <div className="m-[10px]">
           <h1 className="text-white text-[18px] font-titleFont">Name</h1>
           <input
-            className="w-[450px] h-[40px] mt-2 "
+            className="lg:w-[450px] w-full h-[40px] mt-2 "
             type="text"
             placeholder="Enter Your Name "
           ></input>
         </div>
-        <div className="mt-[15px]">
+        <div className="mt-[15px] m-[10px]">
           <h1 className=" text-white text-[18px] font-titleFont">Email</h1>
           <input
-            className="w-[450px] h-[40px] mt-2 "
+            className="lg:w-[450px] w-full h-[40px] mt-2 "
             type="email"
             placeholder="Enter Your Email"
           ></input>
         </div>
         <div>
-          <div className="mt-[15px]">
+          <div className="mt-[15px] m-[10px]">
             <h1 className=" text-white text-[18px] font-titleFont">Message</h1>
             <textarea name="message" rows="5" cols="60"></textarea>
           </div>
         </div>
-        <div className="h-[50px] w-[140px] bg-green-500 mt-[20px]">
-          <button className="text-white p-[10px] pl-[40px] text-[18px] font-titleFont">
+        <div className="h-[50px] w-[140px] bg-green-500 mt-[20px] ml-[10px] lg:ml-[0px]">
+          <button className="text-white p-[10px]  pl-[40px] text-[18px] font-titleFont">
             Submit
           </button>
         </div>

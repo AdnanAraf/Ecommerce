@@ -72,9 +72,25 @@ const Navbar = () => {
                     Shop
                   </Link>
                 </li>
+                <li className="pt-[30px]">
+                  <Link
+                    className="p-[20px] font-bodyFont text-[16px]  text-black "
+                    to="blog"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li className="pt-[30px]">
+                  <Link
+                    className="p-[20px] font-bodyFont text-[16px] text-black"
+                    to="contract"
+                  >
+                    Contract
+                  </Link>
+                </li>
                 {user?.email ? (
-                  <div className="ml-[20px] overflow-hidden ">
-                    <Link to="payment">
+                  <div className="ml-[20px] overflow-hidden pt-[30px]">
+                    <Link to="payment pt-[30px]">
                       <div>
                         <h1 className=" text-center absolute  ml-[20px]    bg-green-300 h-[20px] w-[20px] rounded-full">
                           {cart?.length}

@@ -9,15 +9,15 @@ import Subject from "./Subject";
 const Contract = () => {
   return (
     <div>
-      <div className="bg-[black] h-[600px] pt-[50px] lg:opacity-[0.85] flex justify-around ">
-        <div className="mt-[50px]">
+      <div className="bg-[black] lg:h-[600px] overflow-hidden   pt-[50px] lg:opacity-[0.85] lg:flex lg:justify-around ">
+        <div className="mt-[50px] ml-[10px] lg:ml-[0px]">
           <Text />
-          <h1 className="font-titleFont text-white text-[25px] w-[700px]">
+          <h1 className="font-titleFont text-white text-[25px] lg:w-[700px]">
             If You have any Query Please Contract To me, We are always by you
             side.
           </h1>
         </div>
-        <div className="">
+        <div className="mt-[50px] ">
           {/* <Name />
           <Email />
           <Message />

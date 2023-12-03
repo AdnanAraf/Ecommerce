@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { FaFacebookF, FaYoutube } from "react-icons/fa";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -36,16 +37,22 @@ const Footer = () => {
                   />
                 </div>
                 <div>
-                  <FontAwesomeIcon
-                    className="linkedin text-[#0072b1] h-[40px] w-[40px]"
-                    icon={faLinkedin}
-                  />
+                  <Link to="https://www.linkedin.com/in/adnan-araf-554483202/">
+                    {" "}
+                    <FontAwesomeIcon
+                      className="linkedin text-[#0072b1] h-[40px] w-[40px]"
+                      icon={faLinkedin}
+                    />
+                  </Link>
                 </div>
+
                 <div>
-                  <FontAwesomeIcon
-                    className=" twitter text-[#1DA1F2] h-[40px] w-[40px]"
-                    icon={faTwitter}
-                  />
+                  <Link to="https://twitter.com/AdnanAraf3">
+                    <FontAwesomeIcon
+                      className=" twitter text-[#1DA1F2] h-[40px] w-[40px]"
+                      icon={faTwitter}
+                    />
+                  </Link>
                 </div>
                 <div>
                   <FontAwesomeIcon

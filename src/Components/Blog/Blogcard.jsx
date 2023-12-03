@@ -16,22 +16,22 @@ const Blogcard = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 font-titleFont mt-[30px] ml-[50px]">
+    <div className="grid lg:grid-cols-2 grid-cols-1 font-titleFont mt-[30px] lg:ml-[50px] overflow-hidden">
       {blog.map((card, index) => (
         <div
           key={index}
           className={`card ${expandedCard === index ? "expanded" : ""}`}
         >
-          <div className="bg-white shadow-lg w-[700px] p-[20px]">
+          <div className="bg-white shadow-lg lg:w-[700px] lg:p-[20px]">
             <img className="h-[400px] w-full" src={card.image}></img>
-            <div className="flex justify-between">
+            <div className="lg:flex justify-between">
               <div>
                 <h1 className="font-titleFont font-bold text-[20px] p-[10px]">
                   {card.title}
                 </h1>
               </div>
               <div>
-                <h1 className="font-titleFont font-bold text-[20px]">
+                <h1 className="font-titleFont font-bold text-[20px] lg:ml-[] ml-[10px]">
                   {card.date}
                 </h1>
               </div>
