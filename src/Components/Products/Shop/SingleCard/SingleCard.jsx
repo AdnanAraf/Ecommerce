@@ -121,14 +121,14 @@ const SingleCard = () => {
           />
         </div>
         <div>
-          <div className="lg:hidden block mt-[30px] ml-[30px] ">
-            <img className="h-[200px]" src={img}></img>
+          <div className="lg:hidden block mt-[50px] ml-[30px] ">
+            <img className="h-[200px] w-[300px]" src={img}></img>
           </div>
           <div className="mr-[250px] mt-[60px]">
             <h1 className="lg:text-[30px] text-[20px] w-[350px] lg:w-[500px] lg:ml-[0px] ml-[20px] font-titleFont font-semibold">
               {name}
             </h1>{" "}
-            <span className="font-titleFont font-bold text-[18px]">
+            <span className="font-titleFont font-bold text-[18px] ml-[20px]">
               Reviews:{review.length}
             </span>
             {/* <span className="font-titleFont font-bold text-[18px]">{sum}</span> */}
@@ -176,7 +176,7 @@ const SingleCard = () => {
                   icon={faPlus}
                 />
               </div>
-              <div className=" mt-[20px]">
+              <div className=" mt-[20px] ml-[90px]">
                 {carddata.color.map((colors, index) => {
                   return (
                     <button

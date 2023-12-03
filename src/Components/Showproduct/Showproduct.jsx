@@ -124,7 +124,7 @@ const Showproduct = () => {
 
   return (
     <div className="">
-      <div className=" absolute  lg:top-[770px] top-[550px]  lg:left-[1200px]  ">
+      <div className=" absolute  lg:top-[770px] top-[750px]  lg:left-[1200px]  ">
         <select
           className=" select  bg-gray-100 font-titleFont text-[16px]"
           onChange={handleSortChange}
@@ -136,7 +136,7 @@ const Showproduct = () => {
           </option>
         </select>
       </div>
-      <div className="flex gap-[30px] absolute lg:ml-[480px] mt-[90px]  ml-[260px]  ">
+      <div className="flex gap-[30px] absolute lg:ml-[480px] lg:mt-[90px] mt-[250px]  ml-[260px]  ">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +145,7 @@ const Showproduct = () => {
             strokeWidth={1.5}
             stroke="currentColor"
             onClick={horizontal}
-            className="h-[30px] w-[30px] lg:ml-[600px] mt-[-5px] "
+            className="h-[30px] w-[30px] lg:ml-[600px] mt-[-5px] lg:block hidden "
           >
             <path
               strokeLinecap="round"
@@ -163,7 +163,7 @@ const Showproduct = () => {
       </div>
       <div>
         <Tabs className="">
-          <div className="h-[200px] w-[400px] bg-white shadow-lg mx-[50px] mt-[50px]">
+          <div className="h-[200px] w-[400px] bg-white shadow-lg lg:mx-[50px] lg:mt-[50px] mt-[20px]">
             <h1 className="text-center font-titleFont text-[20px] font-bold">
               Filter By
             </h1>
@@ -234,7 +234,7 @@ const Showproduct = () => {
       {fourColumn ? (
         <>
           {" "}
-          <div className="grid grid-cols-4 gap-[20px] mt-[50px]  ml-[50px]">
+          <div className="grid lg:grid-cols-4 grid-cols-1 gap-[20px] mt-[50px]  lg:ml-[50px]">
             {select1 &&
               books.map((item) => (
                 <ShopCard item={item} showModal={showModal} />

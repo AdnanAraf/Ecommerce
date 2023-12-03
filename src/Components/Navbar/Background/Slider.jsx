@@ -11,7 +11,7 @@ const Slider = () => {
         <div>
           <div>
             <div>
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden mt-[50px]">
                 <img
                   className="w-full"
                   src="https://i.ibb.co/42WHfTb/banner-14716c36.jpg"

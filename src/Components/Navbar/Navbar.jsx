@@ -31,7 +31,7 @@ const Navbar = () => {
             <span className="text-white">Kiddo</span>FunFinds
           </h1>
         </div>
-        <h1 className="lg:pt-[20px] text-center     font-semibold text-white">
+        <h1 className="lg:pt-[20px] text-center ml-[-20px]    font-semibold text-white">
           Enjoy 10% off everything with code GIFT2023
         </h1>
 
