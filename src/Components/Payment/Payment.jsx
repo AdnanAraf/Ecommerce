@@ -49,10 +49,10 @@ const Payment = () => {
           </tbody>
         </table>
         <div>
-          <hr className=" w-[600px] border-1 border-blue-800"></hr>
+          <hr className=" lg:w-full w-[600px] border-1 border-blue-800"></hr>
         </div>
         <div>
-          <h1 className="lg:ml-[800px] font-titleFont lg:text-[16px] text-[18px]">
+          <h1 className="lg:ml-[850px] font-titleFont lg:text-[16px] text-[18px]">
             Total=${sum}
           </h1>
         </div>
